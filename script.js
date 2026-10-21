@@ -1,74 +1,88 @@
-const navbar = document.getElementById("navbar");
-const navLinks = document.getElementById("navLinks");
-const menuToggle = document.getElementById("menuToggle");
-const progress = document.getElementById("scrollProgress");
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.getElementById("siteHeader");
+  const topLine = document.getElementById("topLine");
+  const menuButton = document.getElementById("menuButton");
+  const mainNav = document.getElementById("mainNav");
 
-window.addEventListener("scroll", () => {
-  const scrolled = window.scrollY > 20;
-  navbar.classList.toggle("scrolled", scrolled);
+  const updateScroll = () => {
+    if (header) header.classList.toggle("compact", window.scrollY > 16);
 
-  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-  const pct = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
-  progress.style.width = `${pct}%`;
-});
+    if (topLine) {
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
+      topLine.style.width = `${progress}%`;
+    }
+  };
 
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
-});
+  updateScroll();
+  window.addEventListener("scroll", updateScroll);
 
-document.querySelectorAll(".nav-links a").forEach((link) => {
-  link.addEventListener("click", () => navLinks.classList.remove("open"));
-});
+  if (menuButton && mainNav) {
+    menuButton.addEventListener("click", () => {
+      const open = mainNav.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(open));
+    });
+  }
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) entry.target.classList.add("visible");
+  document.querySelectorAll(".main-nav a").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (mainNav) mainNav.classList.remove("open");
+      if (menuButton) menuButton.setAttribute("aria-expanded", "false");
+    });
   });
-}, { threshold: 0.12 });
 
-document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal-enhanced");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.12});
+    document.querySelectorAll(".solution-card,.section-title,.process-grid article,.group-copy,.quote-copy").forEach(el=>observer.observe(el));
+  }
 
-document.querySelectorAll(".service-card").forEach((card) => {
-  card.addEventListener("pointermove", (event) => {
-    const rect = card.getBoundingClientRect();
-    card.style.setProperty("--x", `${event.clientX - rect.left}px`);
-    card.style.setProperty("--y", `${event.clientY - rect.top}px`);
-  });
-});
+  const buildWhatsAppMessage = (title, fields) => {
+    const lines = [title, ""];
+    Object.entries(fields).forEach(([label, value]) => {
+      const finalValue = value && String(value).trim() ? String(value).trim() : "No informado";
+      lines.push(`- ${label}: ${finalValue}`);
+    });
+    return encodeURIComponent(lines.join("\n"));
+  };
 
-function buildWhatsAppMessage(title, fields) {
-  const lines = [title, ""];
-  Object.entries(fields).forEach(([key, value]) => {
-    const finalValue = value && value.trim() ? value.trim() : "No informado";
-    lines.push(`• ${key}: ${finalValue}`);
-  });
-  return encodeURIComponent(lines.join("\n"));
-}
+  const quoteForm = document.getElementById("quoteForm");
+  if (quoteForm) {
+    quoteForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const data = new FormData(quoteForm);
+      const msg = buildWhatsAppMessage("Hola RR 3PL, quiero solicitar una propuesta de servicios logísticos:", {
+        "Empresa / Nombre": data.get("empresa"),
+        "Teléfono": data.get("telefono"),
+        "Servicio": data.get("servicio"),
+        "Volumen estimado": data.get("volumen"),
+        "Detalle": data.get("detalle"),
+      });
+      window.open(`https://wa.me/543517059319?text=${msg}`, "_blank");
+    });
+  }
 
-document.getElementById("quoteForm").addEventListener("submit", (event) => {
-  event.preventDefault();
-  const data = new FormData(event.target);
-  const msg = buildWhatsAppMessage("Hola RR 3PL, quiero solicitar una cotización de servicios logísticos:", {
-    "Empresa / Nombre": data.get("empresa"),
-    "Teléfono": data.get("telefono"),
-    "Servicio": data.get("servicio"),
-    "Volumen estimado": data.get("volumen"),
-    "Detalle": data.get("detalle"),
-  });
-  window.open(`https://wa.me/543517706684?text=${msg}`, "_blank");
-});
-
-document.getElementById("workForm").addEventListener("submit", (event) => {
-  event.preventDefault();
-  const data = new FormData(event.target);
-  const msg = buildWhatsAppMessage("Hola RR 3PL, quiero postularme para trabajar como cadete:", {
-    "Nombre y apellido": data.get("nombre"),
-    "Teléfono": data.get("telefono"),
-    "Email": data.get("email"),
-    "Vehículo": data.get("vehiculo"),
-    "Zona": data.get("zona"),
-    "Disponibilidad": data.get("disponibilidad"),
-    "Experiencia / comentarios": data.get("comentarios"),
-  });
-  window.open(`https://wa.me/543517706684?text=${msg}`, "_blank");
+  const workForm = document.getElementById("workForm");
+  if (workForm) {
+    workForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const data = new FormData(workForm);
+      const msg = buildWhatsAppMessage("Hola RR 3PL, quiero postularme para trabajar como cadete:", {
+        "Nombre y apellido": data.get("nombre"),
+        "Teléfono": data.get("telefono"),
+        "Email": data.get("email"),
+        "Vehículo": data.get("vehiculo"),
+        "Zona": data.get("zona"),
+        "Disponibilidad": data.get("disponibilidad"),
+        "Experiencia / comentarios": data.get("comentarios"),
+      });
+      window.open(`https://wa.me/543517059319?text=${msg}`, "_blank");
+    });
+  }
 });
