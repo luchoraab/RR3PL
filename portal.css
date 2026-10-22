@@ -1,0 +1,146 @@
+:root{font-family:Roboto,Arial,sans-serif;color:#f6f8fb;background:#080b10;font-synthesis:none}
+*{box-sizing:border-box}body{margin:0;min-width:320px;min-height:100svh;overflow-x:hidden}a{text-decoration:none;color:inherit}img{display:block;max-width:100%}
+body{background:radial-gradient(ellipse 45% 55% at 14% 20%,#4f5f7942,transparent 75%),radial-gradient(ellipse 44% 58% at 88% 75%,#3763ae28,transparent 76%),linear-gradient(130deg,#11151c,#080a0e 58%,#10151e)}
+body::before{content:"";position:fixed;inset:0;background:linear-gradient(#ffffff06 1px,transparent 1px),linear-gradient(90deg,#ffffff06 1px,transparent 1px);background-size:80px 80px;mask-image:linear-gradient(180deg,transparent,#0008 35%,transparent 92%);pointer-events:none}
+.ambient{position:fixed;inset:-15%;pointer-events:none;background:radial-gradient(ellipse 22% 20% at 20% 42%,#ffffff19,transparent 80%),radial-gradient(ellipse 30% 20% at 79% 62%,#587db83b,transparent 80%);filter:blur(75px);animation:ambient 20s ease-in-out infinite alternate}
+.portal{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;min-height:100svh;width:min(1360px,calc(100% - 72px));margin:auto;padding:36px 0 25px}
+.portal-heading{text-align:center;margin:0 auto 38px;display:flex;flex-direction:column;align-items:center}
+.group-logo{width:clamp(230px,26vw,390px);max-height:105px;object-fit:contain;filter:drop-shadow(0 15px 25px #0009)}
+.portal-heading p{color:#bec6d2;font-size:.81rem;letter-spacing:.24em;text-transform:uppercase;margin:22px 0 0;font-weight:700}
+.choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.choice-card{position:relative;min-width:0;min-height:416px;border:1px solid #ffffff8c;border-radius:32px;padding:23px;display:flex;flex-direction:column;background:linear-gradient(150deg,#f8fafdf2,#e7ebf1f0);color:#101720;box-shadow:0 28px 60px #0004,inset 0 2px 3px #fff9;overflow:hidden;transition:transform .45s cubic-bezier(.2,.85,.25,1),box-shadow .45s,border-color .45s}
+.choice-card:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 40% 30%,#fff,transparent 72%);opacity:.75;pointer-events:none}
+.choice-card:after{content:"";position:absolute;left:-40%;top:-80%;height:210%;width:40%;transform:rotate(17deg);background:linear-gradient(90deg,transparent,#ffffffb9,transparent);filter:blur(16px);transition:left .75s ease;pointer-events:none}
+.choice-card:hover{transform:translateY(-9px);border-color:#fff;box-shadow:0 40px 78px #0008,inset 0 2px 3px #fff}
+.choice-card:hover:after{left:145%}
+.choice-card:focus-visible{outline:3px solid #8cbcff;outline-offset:5px}
+.choice-number,.logo-area,.choice-bottom{position:relative;z-index:1}
+.choice-number{font-size:.69rem;font-weight:800;letter-spacing:.19em;color:#667181}
+.logo-area{flex:1;min-height:245px;display:flex;align-items:center;justify-content:center;padding:6px 5px;}
+.logo-area img{object-fit:contain;width:100%;max-height:235px;filter:drop-shadow(0 16px 15px #1113);transition:transform .4s}
+.choice-card:hover .logo-area img{transform:scale(1.04)}
+.logistica .logo-area img{max-height:205px}
+.digital .logo-area img{max-height:230px}
+.choice-bottom{display:flex;align-items:flex-end;justify-content:space-between;border-top:1px solid #1e2d3a23;padding-top:18px;gap:6px}
+.choice-bottom h1,.choice-bottom h2{font-size:clamp(1.25rem,2vw,1.66rem);line-height:1.12;margin:0 0 6px;font-weight:900;letter-spacing:-.04em}
+.choice-bottom p{color:#626d7a;font-size:.83rem;margin:0;line-height:1.3}
+.arrow{width:45px;height:45px;border-radius:50%;display:grid;place-items:center;font-size:1.35rem;background:#141920;color:#fff;flex-shrink:0}
+.digital .arrow{background:#124494}
+.portal-footer{display:flex;justify-content:space-between;gap:20px;margin-top:31px;color:#99a4b4;font-size:.77rem;letter-spacing:.03em}
+.portal-footer a:hover{text-decoration:underline;color:white}
+@keyframes ambient{to{transform:translate(4%,-2%) scale(1.08)}}
+@media(max-width:940px){.portal{width:min(740px,calc(100% - 42px));justify-content:flex-start;padding-top:45px}.choices{grid-template-columns:1fr;gap:14px}.choice-card{min-height:225px;border-radius:27px;display:grid;grid-template-columns:55% 45%;padding:19px 20px;grid-template-rows:auto 1fr}.choice-number{grid-column:1/-1}.logo-area{grid-column:1;min-height:155px;grid-row:2;padding:8px 12px 4px 0}.logo-area img,.logistica .logo-area img,.digital .logo-area img{height:142px;max-height:142px}.choice-bottom{grid-column:2;grid-row:2;align-self:stretch;justify-content:center;align-items:flex-start;flex-direction:column;padding:0 0 0 10px;border-top:0;border-left:1px solid #1e2d3a23}.choice-bottom h1,.choice-bottom h2{font-size:1.38rem}.arrow{width:37px;height:37px;margin-top:14px;font-size:1.1rem}.portal-heading{margin-bottom:28px}}
+@media(max-width:530px){.portal{width:calc(100% - 26px);padding:30px 0 22px}.portal-heading{margin-bottom:24px}.group-logo{width:235px}.portal-heading p{letter-spacing:.12em;font-size:.72rem;margin-top:16px}.choice-card{min-height:203px;padding:15px 13px;grid-template-columns:52% 48%;border-radius:22px}.choice-number{font-size:.59rem}.logo-area{min-height:138px}.logo-area img,.logistica .logo-area img,.digital .logo-area img{height:120px;max-height:120px}.choice-bottom h1,.choice-bottom h2{font-size:1.12rem}.choice-bottom p{font-size:.73rem}.portal-footer{margin-top:24px;font-size:.67rem;flex-direction:column;align-items:center;gap:8px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Refinamiento premium de la portada original: mantiene tarjetas y logos */
+.portal-heading{animation:entrance .72s both cubic-bezier(.18,.82,.25,1)}
+.group-logo{filter:drop-shadow(0 12px 28px rgba(0,0,0,.48)) drop-shadow(0 0 18px rgba(255,255,255,.07))}
+.portal-heading p{color:#d2d7e0}
+.choice-card{backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);background:linear-gradient(155deg,rgba(255,255,255,.96),rgba(229,234,241,.93));animation:card-rise .65s both cubic-bezier(.18,.82,.25,1)}
+.choice-card:nth-child(1){animation-delay:.11s}
+.choice-card:nth-child(2){animation-delay:.20s}
+.choice-card:nth-child(3){animation-delay:.29s}
+.choice-card .logo-area::after{content:"";position:absolute;inset:7% 5% 8%;border-radius:50%;background:radial-gradient(ellipse at center,rgba(255,255,255,.5),transparent 68%);filter:blur(14px);z-index:-1;pointer-events:none}
+.choice-card:hover .logo-area img{transform:translateY(-5px) scale(1.04)}
+.choice-card .arrow{transition:transform .25s,background .25s}
+.choice-card:hover .arrow{transform:translate(2px,-2px)}
+.choice-card.motors .arrow{background:#1e4c99}
+.choice-card.logistica .arrow{background:#151b25}
+.choice-card.digital .arrow{background:#3156bf}
+.portal-footer{opacity:.93}
+@keyframes entrance{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes card-rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.portal-heading,.choice-card{animation:none}}
+
+/* Portal Grupo RAAB · refinamiento fiel al original */
+body{background:radial-gradient(ellipse 46% 58% at 12% 15%,rgba(91,104,131,.34),transparent 76%),radial-gradient(ellipse 44% 50% at 88% 75%,rgba(47,85,156,.20),transparent 76%),linear-gradient(135deg,#0e1219,#080b11 60%,#0e1420)}
+.cursor-light{pointer-events:none;position:fixed;top:0;left:0;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(93,125,183,.13) 0%,rgba(93,125,183,.045) 31%,transparent 66%);filter:blur(8px);opacity:0;z-index:0;transition:opacity .45s ease;will-change:transform}
+.cursor-light.visible{opacity:1}
+.portal{z-index:2;width:min(1410px,calc(100% - 72px))}
+.portal-heading{margin-bottom:42px}
+.group-logo{width:clamp(260px,28vw,425px);max-height:116px}
+.portal-heading p{font-size:.76rem;letter-spacing:.24em;color:#d5deeb}
+.choices{gap:25px;perspective:1600px}
+.choice-card{min-height:442px;transform:perspective(1100px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transform-style:preserve-3d;box-shadow:0 28px 60px rgba(0,0,0,.38),inset 0 1px 0 #fff}
+.choice-card:before{background:radial-gradient(ellipse 72% 66% at var(--mx,40%) var(--my,30%),#fff 0%,rgba(255,255,255,.34) 62%,transparent 96%);opacity:.75}
+.choice-card:hover{transform:perspective(1100px) translateY(-7px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));box-shadow:0 43px 85px rgba(0,0,0,.42),inset 0 1px 0 #fff}
+.logo-area{min-height:265px}
+.logo-area img{filter:drop-shadow(0 22px 22px rgba(13,24,42,.17))}
+.choice-bottom h2{font-weight:900}
+.choice-bottom p{color:#536273}
+.choice-number{color:#596b81}
+.arrow{transition:background .25s ease,transform .25s ease}
+.choice-card:hover .arrow{transform:translate(2px,-2px) rotate(5deg)}
+@media(max-width:940px){.choice-card{min-height:230px;transform:none!important}.choice-card:hover{transform:translateY(-3px)!important}.logo-area{min-height:155px}}
+@media(max-width:530px){.portal{width:calc(100% - 26px)}.group-logo{width:260px}.portal-heading p{letter-spacing:.11em}.choice-card{min-height:203px}.logo-area{min-height:138px}}
+@media(prefers-reduced-motion:reduce){.cursor-light{display:none}.choice-card{transform:none!important}}
+/* Entrada escalonada sin interferir con el seguimiento 3D del cursor */
+.choice-card{animation:card-fade .65s both cubic-bezier(.18,.82,.25,1)}
+@keyframes card-fade{from{opacity:0;filter:blur(6px)}to{opacity:1;filter:blur(0)}}
+@media(prefers-reduced-motion:reduce){.choice-card{animation:none}}
+
+/* V3: apertura RR -> GRUPO RAAB y ambientación refinada, sin alterar las tres tarjetas. */
+.intro-scene { display:none; position:fixed; inset:0; z-index:9999; isolation:isolate;
+  background:linear-gradient(145deg,#111720 0%,#05070c 52%,#0e1420 100%);
+  overflow:hidden; align-items:center; justify-content:center; }
+.rr-preintro .intro-scene {display:flex}
+.rr-preintro body {overflow:hidden}
+.rr-preintro .portal {opacity:0; transform:translateY(10px)}
+.rr-intro-complete .portal {animation:rrLandingIn 850ms cubic-bezier(.2,.8,.2,1) both}
+.intro-lights {position:absolute;inset:-30%;background:radial-gradient(circle at 30% 42%,rgba(255,255,255,.15),transparent 25%),radial-gradient(circle at 72% 46%,rgba(36,91,174,.27),transparent 32%);filter:blur(55px);animation:introPulse 4s ease-in-out infinite alternate}
+.intro-center {z-index:1;display:flex;flex-direction:column;align-items:center;gap:18px;width:min(520px,78vw);transform:translateY(-12px)}
+.intro-monogram {width:min(360px,64vw);height:auto;max-height:235px;object-fit:contain;filter:drop-shadow(0 16px 50px rgba(255,255,255,.17));animation:rrMonogramIn 900ms cubic-bezier(.18,.82,.25,1) both}
+.intro-rule {width:0;height:1px;background:linear-gradient(90deg,transparent,#e0e8f5,transparent);animation:rrIntroLine 650ms .8s both}
+.intro-brand {font-size:clamp(23px,5vw,47px);font-weight:900;letter-spacing:.27em;text-align:center;color:#f2f5fa;line-height:1.15;opacity:0;animation:rrIntroName 800ms 1.2s both;text-shadow:0 9px 35px rgba(255,255,255,.12)}
+.intro-skip {position:absolute;z-index:2;bottom:25px;right:clamp(15px,4vw,50px);padding:12px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.055);color:#ccd5e2;font:700 12px Roboto,Arial,sans-serif;letter-spacing:.04em;backdrop-filter:blur(16px);cursor:pointer}
+.intro-skip:hover,.intro-skip:focus-visible {background:rgba(255,255,255,.15);color:white}
+.rr-intro-complete .intro-scene {display:flex;animation:rrIntroFade .7s both;pointer-events:none}
+.choice-card {transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .45s,border-color .45s,background .45s}
+.choice-card .logo-area img {will-change:transform;transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+.choice-card:focus-visible {outline:3px solid #a8c5ff}
+.choice-card:hover .logo-area img {transform:scale(1.055) translateY(-4px)}
+body::after {content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 120%,rgba(69,108,170,.12),transparent 54%);z-index:0;animation:rrBackdropBreathe 16s ease-in-out infinite alternate}
+@keyframes rrMonogramIn {0%{opacity:0;filter:blur(18px);transform:scale(.8) translateY(30px)}100%{opacity:1;filter:blur(0) drop-shadow(0 16px 50px rgba(255,255,255,.17));transform:scale(1) translateY(0)}}
+@keyframes rrIntroLine {from{width:0;opacity:0}to{width:min(410px,70vw);opacity:1}}
+@keyframes rrIntroName {from{opacity:0;filter:blur(10px);transform:translateY(10px)}to{opacity:1;filter:blur(0);transform:translateY(0)}}
+@keyframes rrIntroFade {0%{opacity:1;filter:blur(0)}100%{opacity:0;filter:blur(12px)}}
+@keyframes rrLandingIn {from{opacity:0;filter:blur(11px);transform:translateY(18px)}to{opacity:1;filter:blur(0);transform:translateY(0)}}
+@keyframes rrBackdropBreathe {from{opacity:.5;transform:translateY(0)}to{opacity:1;transform:translateY(-2%)}}
+@keyframes introPulse {from{transform:translateX(-2%) scale(1);opacity:.55}to{transform:translateX(3%) scale(1.04);opacity:1}}
+@media(max-width:520px){.intro-center{gap:13px}.intro-brand{letter-spacing:.14em}.intro-skip{bottom:20px;right:17px}}
+@media(prefers-reduced-motion:reduce){.intro-scene {display:none!important}.rr-preintro .portal{opacity:1!important;transform:none!important}.rr-intro-complete .portal{animation:none!important}body::after{animation:none}}
+
+
+/* V5 · intro logo exacto del monograma enviado por el usuario */
+.intro-monogram--flat{
+  width:min(440px,72vw);
+  max-height:255px;
+  filter:drop-shadow(0 18px 42px rgba(255,255,255,.08)) drop-shadow(0 10px 28px rgba(0,0,0,.42));
+}
+
+/* Grupo RAAB V6 · arquitectura visual premium y legibilidad de cada marca */
+.choice-card,.choice-card:hover{color:#f4f7ff}
+.choice-card{padding:22px;min-height:440px;border:1px solid rgba(208,224,255,.22);background:linear-gradient(140deg,rgba(33,40,55,.90),rgba(12,18,30,.91))!important;backdrop-filter:blur(24px) saturate(120%);-webkit-backdrop-filter:blur(24px) saturate(120%);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 32px 74px rgba(0,0,0,.38)}
+.choice-card::before{background:radial-gradient(ellipse 85% 75% at var(--mx,50%) var(--my,15%),rgba(126,164,245,.23),transparent 77%)!important;opacity:1}
+.choice-card::after{background:linear-gradient(90deg,transparent,rgba(194,220,255,.17),transparent);filter:blur(18px)}
+.choice-card:hover{border-color:rgba(197,220,255,.59);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 35px 82px rgba(0,0,0,.52),0 0 42px rgba(50,95,195,.09)}
+.choice-number{color:#b8c4d6;font-size:.68rem}
+.logo-area{position:relative;border:1px solid rgba(246,250,255,.5);border-radius:22px;margin:19px 0 21px;padding:16px 17px;min-height:242px;background:linear-gradient(135deg,rgba(255,255,255,.94),rgba(217,225,239,.88));box-shadow:0 22px 44px rgba(0,0,0,.20),inset 0 1px 0 #fff;overflow:hidden;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+.logo-area:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 52% 0%,rgba(255,255,255,.94),transparent 75%);pointer-events:none}
+.logo-area::after{opacity:.18;filter:blur(28px)}
+.logo-area img{position:relative;z-index:2;max-height:205px;filter:drop-shadow(0 18px 14px rgba(26,37,59,.15))}
+.logistica .logo-area img{max-height:193px}
+.digital .logo-area img{max-height:185px}
+.choice-bottom{border-color:rgba(204,220,255,.19);padding-top:19px}
+.choice-bottom h2{font-size:clamp(1.22rem,1.8vw,1.65rem);color:#f3f6ff}
+.choice-bottom p{color:#b9c5d5}
+.choice-card .arrow{color:white;border:1px solid rgba(255,255,255,.16);background:#192f5c}
+.choice-card.logistica .arrow{background:#222b3b}
+.choice-card.digital .arrow{background:#365bbb}
+.portal-footer{color:#aebbd0}
+@media(max-width:940px){.choice-card{min-height:230px}.logo-area{grid-column:1;grid-row:2;min-height:155px;margin:8px 8px 2px 0;padding:9px}.logo-area img,.logistica .logo-area img,.digital .logo-area img{max-height:132px}.choice-bottom{padding-left:15px;border-left:1px solid rgba(204,220,255,.19);border-top:0}}
+@media(max-width:530px){.choice-card{min-height:218px;padding:13px}.logo-area{min-height:130px;margin:9px 6px 1px 0}.logo-area img,.logistica .logo-area img,.digital .logo-area img{max-height:118px}.choice-bottom h2{font-size:1.05rem}}
+@media(prefers-reduced-motion:reduce){.choice-card{transform:none!important}}
