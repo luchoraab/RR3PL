@@ -13,7 +13,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="portal.css">
-  <script>try { if (!sessionStorage.getItem("rr_intro_seen") && !matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("rr-preintro"); } catch(e) {}</script>
   <meta property="og:type" content="website"><meta property="og:locale" content="es_AR">
   <meta property="og:site_name" content="Grupo RAAB"><meta property="og:title" content="Grupo RAAB | Elegí tu unidad de negocios">
   <meta property="og:description" content="RR Motors · RR Third-Party Logistics · RR Digital Solutions">
@@ -21,14 +20,18 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Grupo RAAB","url":"https://rr-raab.com/","logo":"https://rr-raab.com/assets/grupo-raab-logo.png","subOrganization":[{"@type":"Organization","name":"RR Motors","url":"https://rr-raab.com/motors/"},{"@type":"Organization","name":"RR Third-Party Logistics","url":"https://rr-raab.com/logistica/"},{"@type":"Organization","name":"RR Digital Solutions","url":"https://rr-raab.com/digital/"}]}</script>
 </head>
 <body>
-  <div class="intro-scene" id="introScene" aria-label="Presentación de Grupo RAAB" role="status">
+  <div class="intro-scene" id="introScene" aria-label="Presentación de Grupo RAAB">
     <div class="intro-lights" aria-hidden="true"></div>
     <div class="intro-center">
       <img src="assets/rr-monograma-intro.png" class="intro-monogram intro-monogram--flat" alt="RR">
       <div class="intro-rule" aria-hidden="true"></div>
-      <div class="intro-brand">GRUPO RAAB</div>
+      <div class="intro-brand">
+        <div class="intro-wordmark">
+          <img src="assets/grupo-raab-logo.png" alt="Grupo RAAB" width="1268" height="390">
+        </div>
+      </div>
     </div>
-    <button class="intro-skip" type="button" id="introSkip">Omitir animación <span aria-hidden="true">↗</span></button>
+    <button class="intro-skip" type="button" id="introSkip">Omitir animación</button>
   </div>
   <div class="ambient" aria-hidden="true"></div><div class="cursor-light" aria-hidden="true"></div>
   <main class="portal">
@@ -40,22 +43,61 @@
       <a class="choice-card motors" href="motors/" aria-label="Entrar al sitio de RR Motors">
         <span class="choice-number">01 / MOVILIDAD</span>
         <div class="logo-area"><img src="assets/rr-motors-transparent.png" alt="RR Motors"></div>
-        <div class="choice-bottom"><div><h2>RR MOTORS</h2><p>Alquiler de vehículos</p></div><span class="arrow" aria-hidden="true">↗</span></div>
+        <div class="choice-bottom"><div><h2>RR MOTORS</h2><p>Alquiler, diagnóstico y mecánica</p></div><span class="arrow" aria-hidden="true">↗</span></div>
       </a>
       <a class="choice-card logistica" href="logistica/" aria-label="Entrar al sitio de RR Third-Party Logistics">
         <span class="choice-number">02 / LOGÍSTICA</span>
-        <div class="logo-area"><img src="assets/rr-3pl-transparent.png" alt="RR Third-Party Logistics"></div>
+        <div class="logo-area">
+          <div class="logistics-lockup" aria-hidden="true">
+            <div class="logistics-emblem"><img src="assets/rr-3pl-transparent.png" alt=""></div>
+            <span>THIRD-PARTY LOGISTICS</span>
+          </div>
+        </div>
         <div class="choice-bottom"><div><h2>RR 3PL</h2><p>Logística y cadetería tercerizada</p></div><span class="arrow" aria-hidden="true">↗</span></div>
       </a>
       <a class="choice-card digital" href="digital/" aria-label="Entrar al sitio de RR Digital Solutions">
         <span class="choice-number">03 / TECNOLOGÍA</span>
         <div class="logo-area"><img src="assets/rr-digital-transparent.png" alt="RR Digital Solutions"></div>
-        <div class="choice-bottom"><div><h2>RR DIGITAL SOLUTIONS</h2><p>Páginas web y aplicaciones</p></div><span class="arrow" aria-hidden="true">↗</span></div>
+        <div class="choice-bottom"><div><h2>RR DIGITAL SOLUTIONS</h2><p>Webs, aplicaciones y sistemas</p></div><span class="arrow" aria-hidden="true">↗</span></div>
       </a>
     </nav>
+    <section class="portal-team" aria-labelledby="team-title">
+      <h2 id="team-title">Nuestro equipo</h2>
+      <div class="team-grid">
+        <figure class="team-person team-person--kevin" style="--step:6">
+          <img src="assets/equipo/kevin.webp" alt="" decoding="async">
+          <figcaption><strong>Kevin Valdés</strong><span>Supervisor</span></figcaption>
+        </figure>
+        <figure class="team-person team-person--celeste" style="--step:4">
+          <img src="assets/equipo/celeste.webp" alt="" decoding="async">
+          <figcaption><strong>Celeste Aranda</strong><span>Administración</span></figcaption>
+        </figure>
+        <figure class="team-person team-person--rocio" style="--step:2">
+          <img src="assets/equipo/rocio.webp" alt="" decoding="async">
+          <figcaption><strong>Rocío Salinas</strong><span>Administración</span></figcaption>
+        </figure>
+        <figure class="team-person team-person--luciano" style="--step:0">
+          <img src="assets/equipo/luciano.webp" alt="" decoding="async">
+          <figcaption><strong>Luciano Raab</strong><span>Presidente</span></figcaption>
+        </figure>
+        <figure class="team-person team-person--dylan" style="--step:1">
+          <img src="assets/equipo/dylan.webp" alt="" decoding="async">
+          <figcaption><strong>Dylan Guzmán</strong><span>Vicepresidente</span></figcaption>
+        </figure>
+        <figure class="team-person team-person--zacarias" style="--step:3">
+          <img src="assets/equipo/zacarias.webp" alt="" decoding="async">
+          <figcaption><strong>Zacarías Muñoz</strong><span>Jefe de Flota</span></figcaption>
+        </figure>
+        <figure class="team-person team-person--franco" style="--step:5">
+          <img src="assets/equipo/franco.webp" alt="" decoding="async">
+          <figcaption><strong>Franco Monjes</strong><span>Jefe de Administración</span></figcaption>
+        </figure>
+      </div>
+    </section>
     <footer class="portal-footer"><span>© 2026 Grupo RAAB</span><a href="mailto:contacto@rr-raab.com">contacto@rr-raab.com</a></footer>
   </main>
   <script src="portal-motion.js" defer></script>
   <script src="portal-intro.js" defer></script>
+  <script src="team.js" defer></script>
 </body>
 </html>

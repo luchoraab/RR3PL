@@ -80,17 +80,19 @@
   }
 
 
-  // Optical illumination starts once the new front photo enters the viewport.
+  // Brighten the headlights when the car itself comes into view.
   const cronosVisual = document.querySelector('.why-section .why-image');
   if (cronosVisual) {
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver(entries => {
-        if (entries.some(entry => entry.isIntersecting)) {
-          cronosVisual.classList.add('lights-on');
-          observer.disconnect();
+        for (const entry of entries) {
+          if (entry.intersectionRatio >= .45 && !cronosVisual.classList.contains('lights-on')) {
+            cronosVisual.classList.add('lights-on');
+          }
+          if (!entry.isIntersecting) cronosVisual.classList.remove('lights-on');
         }
-      }, {threshold: .18});
-      observer.observe(cronosVisual);
+      }, { threshold: [0, .45] });
+      observer.observe(cronosVisual.querySelector('.cronos-stage') || cronosVisual);
     } else {
       cronosVisual.classList.add('lights-on');
     }
@@ -115,8 +117,23 @@
 
   const form = document.querySelector('#contactForm');
   const vehicle = document.querySelector('#vehiculo');
+  const shift = form?.elements.namedItem('turno');
+  const updateShifts = () => {
+    if (!shift) return;
+    for (const option of shift.options) {
+      option.disabled = (vehicle?.value === 'Volkswagen Gol' && option.value === '24 horas')
+        || (vehicle?.value === 'Nissan Versa' && option.value === '12 horas');
+    }
+    if (shift.selectedOptions[0]?.disabled) shift.value = '';
+  };
+
+  vehicle?.addEventListener('change', updateShifts);
+  updateShifts();
   document.querySelectorAll('[data-ask]').forEach(button => button.addEventListener('click', () => {
     if (vehicle) vehicle.value = button.dataset.ask || '';
+    const reason = form?.elements.namedItem('motivo');
+    if (reason) reason.value = 'Alquiler de vehículo';
+    updateShifts();
     if (form) form.scrollIntoView({behavior: 'smooth', block: 'center'});
   }));
   form?.addEventListener('submit', event => {

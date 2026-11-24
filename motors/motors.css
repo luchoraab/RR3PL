@@ -293,3 +293,41 @@
 /* V6 final: tarjeta de batería con la misma única etiqueta inferior que las tarjetas vecinas */
 .service-grid .battery-art .battery-photo{filter:brightness(.83) saturate(.95) contrast(1.06)!important}
 .why-section .cronos-stage .cronos-real{-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 91%,rgba(0,0,0,.86) 97%,rgba(0,0,0,.65) 100%);mask-image:linear-gradient(to bottom,#000 0%,#000 91%,rgba(0,0,0,.86) 97%,rgba(0,0,0,.65) 100%)}
+
+/* Keep the glow close to the headlamp housings. */
+.why-section .cronos-stage .headlight {
+  top: 38%;
+  width: 16%;
+  height: 10%;
+  border-radius: 50%;
+  filter: blur(1.5px);
+  background: radial-gradient(ellipse at center,
+    #fff 0 14%, #fff 25%, #f7faffd9 38%, #ebf3ff65 55%, transparent 74%);
+  box-shadow: none;
+}
+
+.why-section .cronos-stage .headlight-left {
+  left: 5.5%;
+  transform: rotate(13deg);
+}
+
+.why-section .cronos-stage .headlight-right {
+  right: 5.5%;
+  transform: rotate(-13deg);
+}
+
+.why-section .why-image.lights-on .headlight {
+  animation: cronos-high-beam-signal 940ms ease-in-out both;
+}
+
+@keyframes cronos-high-beam-signal {
+  0%, 40%, 50%, 100% { opacity: 0; }
+  13%, 25%, 63%, 75% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .why-section .why-image.lights-on .headlight {
+    animation: none;
+    opacity: .42;
+  }
+}

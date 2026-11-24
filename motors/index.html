@@ -50,12 +50,12 @@
     </div></div></section>
 
   <section class="section fleet-section" id="flota"><div class="container">
-    <div class="fleet-title-row"><div class="section-header fleet-header"><div class="eyebrow dark">RR MOTORS / FLOTA</div><h2>Conocé nuestros autos.</h2><p>Ocho opciones con valores de alquiler por turno. El carrusel avanza automáticamente; también podés usar las flechas o deslizar para recorrerlos.</p></div><div class="carousel-controls"><button class="slide-arrow" type="button" id="prev" aria-label="Vehículo anterior">←</button><button class="slide-arrow" type="button" id="next" aria-label="Vehículo siguiente">→</button></div></div>
-    <div class="vehicle-track" id="vehicleTrack" aria-label="Carrusel de ocho vehículos">
-      <article class="vehicle-card" id="auto-1" data-car="Volkswagen Gol" tabindex="0" aria-label="Volkswagen Gol, alquiler de 12 y 24 horas">
+    <div class="fleet-title-row"><div class="section-header fleet-header"><div class="eyebrow dark">RR MOTORS / FLOTA</div><h2>Conocé nuestros autos.</h2><p>Nueve opciones con valores de alquiler por turno. El carrusel avanza automáticamente; también podés usar las flechas o deslizar para recorrerlos.</p></div><div class="carousel-controls"><button class="slide-arrow" type="button" id="prev" aria-label="Vehículo anterior">←</button><button class="slide-arrow" type="button" id="next" aria-label="Vehículo siguiente">→</button></div></div>
+    <div class="vehicle-track" id="vehicleTrack" aria-label="Carrusel de nueve vehículos">
+      <article class="vehicle-card" id="auto-1" data-car="Volkswagen Gol" tabindex="0" aria-label="Volkswagen Gol, alquiler de 12 horas">
     <div class="vehicle-image"><span class="body-label">Compacto</span><img src="assets/gol.webp" alt="Volkswagen Gol color blanco" loading="lazy" width="1000" height="750"></div>
     <div class="vehicle-body"><div class="vehicle-heading"><h3>Volkswagen Gol</h3><span>Blanco</span></div>
-      <div class="rates"><div class="rate"><small>12 HORAS</small><strong>$40.000</strong><span>Lunes a domingo</span></div><div class="rate"><small>24 HORAS</small><strong>$60.000</strong><span>Lunes a domingo</span></div></div>
+      <div class="rates"><div class="rate"><small>12 HORAS</small><strong>$45.000</strong><span>Lunes a domingo</span></div></div>
       <button type="button" class="vehicle-cta" data-ask="Volkswagen Gol">Consultar este vehículo <span aria-hidden="true">↗</span></button>
     </div>
   </article>
@@ -90,7 +90,7 @@
 <article class="vehicle-card" id="auto-6" data-car="Fiat Cronos" tabindex="0" aria-label="Fiat Cronos, alquiler de 12 y 24 horas">
     <div class="vehicle-image"><span class="body-label">Sedán</span><img src="assets/cronos.webp" alt="Fiat Cronos color rojo" loading="lazy" width="1000" height="750"></div>
     <div class="vehicle-body"><div class="vehicle-heading"><h3>Fiat Cronos</h3><span>Rojo</span></div>
-      <div class="rates"><div class="rate"><small>12 HORAS</small><strong>$55.000 / $60.000</strong><span>Lun–Jue / Vie–Dom</span></div><div class="rate"><small>24 HORAS</small><strong>$85.000</strong><span>Lunes a domingo</span></div></div>
+      <div class="rates"><div class="rate"><small>12 HORAS</small><strong>$55.000 / $60.000</strong><span>Lun–Jue / Vie–Dom</span></div><div class="rate"><small>24 HORAS</small><strong>$90.000 / $95.000</strong><span>Lun–Jue / Vie–Dom</span></div></div>
       <button type="button" class="vehicle-cta" data-ask="Fiat Cronos">Consultar este vehículo <span aria-hidden="true">↗</span></button>
     </div>
   </article>
@@ -108,8 +108,16 @@
       <button type="button" class="vehicle-cta" data-ask="Fiat Idea Adventure">Consultar este vehículo <span aria-hidden="true">↗</span></button>
     </div>
   </article>
+      <article class="vehicle-card" id="auto-9" data-car="Nissan Versa" tabindex="0" aria-label="Nissan Versa, alquiler de 24 horas">
+        <div class="vehicle-image"><span class="body-label">Sedán</span><img src="assets/versa.png" alt="Imagen de referencia de un Nissan Versa blanco" loading="lazy" decoding="async"></div>
+        <div class="vehicle-body">
+          <div class="vehicle-heading"><h3>Nissan Versa</h3><span>Blanco</span></div>
+          <div class="rates"><div class="rate"><small>24 HORAS</small><strong>$90.000</strong></div></div>
+          <button type="button" class="vehicle-cta" data-ask="Nissan Versa">Consultar este vehículo <span aria-hidden="true">↗</span></button>
+        </div>
+      </article>
     </div>
-    <div class="carousel-status" aria-hidden="true"><span class="carousel-status-line"><i id="fleetProgress"></i></span><span id="fleetIndex">01 / 08</span><span>Reproducción automática · Control manual</span></div>
+    <div class="carousel-status" aria-hidden="true"><span class="carousel-status-line"><i id="fleetProgress"></i></span><span id="fleetIndex">01 / 09</span><span>Reproducción automática · Control manual</span></div>
     <div class="fleet-notes"><span><span class="small-blue-dot"></span> Tarifas indicadas en pesos argentinos por turno.</span><span>Consultá condiciones y disponibilidad antes de coordinar.</span></div>
   </div></section>
 
@@ -146,7 +154,7 @@
 
   <section class="final-cta" id="contacto"><div class="container contact-shell">
     <div class="contact-copy"><div class="eyebrow">HABLEMOS</div><h2>Pedinos una propuesta y te respondemos rápido.</h2><p>Escribinos qué vehículo o servicio necesitás y coordinamos por WhatsApp con una atención directa, simple y comercial.</p><a href="https://wa.me/5493517059319" class="contact-direct" target="_blank" rel="noopener noreferrer">WhatsApp directo <span>↗</span></a></div>
-    <form id="contactForm" class="contact-form"><h3>Solicitá tu consulta</h3><p>Completá tus datos y prepararemos tu mensaje para que nos escribas por WhatsApp en un solo paso.</p><div class="form-grid"><label>Nombre<input type="text" name="nombre" placeholder="Tu nombre" autocomplete="name" required></label><label>Teléfono<input type="tel" name="telefono" placeholder="351..." autocomplete="tel" required></label><label>Quiero consultar<select name="motivo" id="motivo"><option>Alquiler de vehículo</option><option>Escaneo profesional vehicular</option><option>Trabajos mecánicos</option><option>Auxilio de batería</option></select></label><label>Vehículo<select name="vehiculo" id="vehiculo"><option value="">Seleccionar vehículo</option><option>Volkswagen Gol</option><option>Fiat Idea</option><option>Fiat Palio Fire</option><option>Chevrolet Prisma Joy</option><option>Chevrolet Prisma LTZ</option><option>Fiat Cronos</option><option>Fiat Siena</option><option>Fiat Idea Adventure</option></select></label><label>Turno<select name="turno"><option value="">Consultar modalidad</option><option>12 horas</option><option>24 horas</option></select></label><label>Mensaje adicional<input name="mensaje" placeholder="Fecha, consulta o detalle"></label></div><button type="submit" class="btn btn-primary form-submit">Enviar consulta por WhatsApp <span aria-hidden="true">↗</span></button><small>El formulario no almacena tus datos: abre WhatsApp con el mensaje preparado.</small></form>
+    <form id="contactForm" class="contact-form"><h3>Solicitá tu consulta</h3><p>Completá tus datos y prepararemos tu mensaje para que nos escribas por WhatsApp en un solo paso.</p><div class="form-grid"><label>Nombre<input type="text" name="nombre" placeholder="Tu nombre" autocomplete="name" required></label><label>Teléfono<input type="tel" name="telefono" placeholder="351..." autocomplete="tel" required></label><label>Quiero consultar<select name="motivo" id="motivo"><option>Alquiler de vehículo</option><option>Escaneo profesional vehicular</option><option>Trabajos mecánicos</option><option>Auxilio de batería</option></select></label><label>Vehículo<select name="vehiculo" id="vehiculo"><option value="">Seleccionar vehículo</option><option>Volkswagen Gol</option><option>Fiat Idea</option><option>Fiat Palio Fire</option><option>Chevrolet Prisma Joy</option><option>Chevrolet Prisma LTZ</option><option>Fiat Cronos</option><option>Fiat Siena</option><option>Fiat Idea Adventure</option><option>Nissan Versa</option></select></label><label>Turno<select name="turno"><option value="">Consultar modalidad</option><option>12 horas</option><option>24 horas</option></select></label><label>Mensaje adicional<input name="mensaje" placeholder="Fecha, consulta o detalle"></label></div><button type="submit" class="btn btn-primary form-submit">Enviar consulta por WhatsApp <span aria-hidden="true">↗</span></button><small>El formulario no almacena tus datos: abre WhatsApp con el mensaje preparado.</small></form>
   </div></section>
 </main>
 <footer class="footer"><div class="container footer-main"><div class="footer-logo"><img src="../assets/grupo-raab-logo.png" alt="Grupo RAAB" width="200" height="70"><p>RR Motors · Unidad de movilidad de Grupo RAAB.<br>Córdoba, Argentina.</p></div><div><strong>Contacto</strong><a href="https://wa.me/5493517059319" target="_blank" rel="noopener noreferrer">+54 351 705 9319</a><a href="mailto:contacto@rr-raab.com">contacto@rr-raab.com</a></div><div><strong>Grupo RAAB</strong><a href="../">Portal principal</a><a href="../logistica/">RR 3PL</a><a href="../digital/">RR Digital Solutions</a></div></div><div class="container footer-bottom">© 2026 Grupo RAAB · RR Motors</div></footer>
