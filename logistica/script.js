@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Volumen estimado": data.get("volumen"),
         "Detalle": data.get("detalle"),
       });
-      window.open(`https://wa.me/543517059319?text=${msg}`, "_blank");
+      window.open(`https://wa.me/5493517059319?text=${msg}`, "_blank");
     });
   }
 
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Disponibilidad": data.get("disponibilidad"),
         "Experiencia / comentarios": data.get("comentarios"),
       });
-      window.open(`https://wa.me/543517059319?text=${msg}`, "_blank");
+      window.open(`https://wa.me/5493517059319?text=${msg}`, "_blank");
     });
   }
 });
