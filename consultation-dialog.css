@@ -42,3 +42,30 @@
 }
 .consultation-dialog form { margin: 0; min-width: 0; }
 :root:has(.consultation-dialog[open]) { overflow: hidden; }
+
+.consultation-dialog [hidden],
+.contact-form [hidden] { display: none !important; }
+.consultation-dialog > form {
+  padding: clamp(.75rem, 3vw, 1.25rem);
+  box-shadow: none;
+}
+.consultation-dialog textarea {
+  width: 100%;
+  padding: .75rem;
+  border: 1px solid #aeb9c9;
+  border-radius: .65rem;
+  font: inherit;
+  resize: vertical;
+}
+.consultation-dialog-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #f4f7fc;
+  padding-bottom: .5rem;
+}
+@media (max-width: 600px) {
+  .consultation-dialog { width: calc(100% - 1rem); }
+  .consultation-dialog :is(input, select, textarea) { font-size: 16px; }
+  .consultation-dialog :is(.form-grid,.form-row) { grid-template-columns: minmax(0, 1fr); }
+}

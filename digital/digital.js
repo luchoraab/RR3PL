@@ -8,12 +8,10 @@
     event.preventDefault();
     if (!form.reportValidity()) return;
     const d = new FormData(form);
-    const lines = ['Hola, quiero consultar a RR Digital Solutions.', '', `Nombre: ${d.get('nombre')}`, `Teléfono: ${d.get('telefono')}`, `Proyecto: ${d.get('proyecto')}`];
-    if(String(d.get('empresa')||'').trim()) lines.push(`Empresa: ${d.get('empresa')}`);
+    const lines = ['Hola, quiero consultar a RR Digital Solutions.', '', `Nombre: ${d.get('nombre')}`, `Proyecto: ${d.get('proyecto')}`];
     lines.push(`Idea: ${d.get('idea')}`);
     const url='https://wa.me/5493517059319?text='+encodeURIComponent(lines.join('\n'));
-    const w=window.open(url,'_blank','noopener,noreferrer');
-    if(!w) window.location.assign(url);
+    window.location.assign(url);
   });
   if ('IntersectionObserver' in window && !reduced.matches) {
     document.documentElement.classList.add('js-enabled');

@@ -108,9 +108,8 @@
     rentalFields.forEach(label => {
       label.hidden = !rental;
       const field = label.querySelector('input, select');
-      field.style.display = rental ? '' : 'none';
       field.disabled = !rental;
-      field.required = rental;
+      field.required = rental && field.name === 'vehiculo';
     });
     if (vehicle) vehicle.required = rental;
     if (detail) detail.required = !rental;
@@ -146,7 +145,6 @@
       'Hola, quiero consultar a RR Motors.',
       '',
       `Nombre: ${data.get('nombre')}`,
-      `Teléfono: ${data.get('telefono')}`,
       `Consulta: ${data.get('motivo')}`,
     ];
     for (const [field, label] of [['vehiculo','Vehículo'],['fecha','Fecha'],['turno','Turno'],['mensaje','Detalle']]) {
@@ -154,7 +152,6 @@
       if (value) lines.push(`${label}: ${value}`);
     }
     const url = 'https://wa.me/5493517059319?text=' + encodeURIComponent(lines.join('\n'));
-    const win = window.open(url, '_blank', 'noopener,noreferrer');
-    if (!win) window.location.assign(url);
+    window.location.assign(url);
   });
 })();

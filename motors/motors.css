@@ -367,3 +367,11 @@
   .site-header .primary-nav.open { display: flex; }
   .site-header .primary-nav a { padding: 12px; }
 }
+
+@media (max-width: 600px) {
+  .hero-grid { padding-block: 24px; }
+  .hero-content h1 { font-size: clamp(2.1rem, 8.8vw, 3rem); overflow-wrap: anywhere; }
+  .hero-art { height: clamp(230px, 72vw, 340px); }
+  .section, .final-cta { padding-block: 52px; }
+  .hero-actions .btn { max-width: 100%; white-space: normal; }
+}

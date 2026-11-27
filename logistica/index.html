@@ -206,7 +206,7 @@
               <circle class="route-marker" cx="235" cy="130" r="8" />
               <circle class="route-marker" cx="525" cy="92" r="8" />
             </svg>
-            
+
           </div>
 
           <div class="tracking-list">
@@ -273,7 +273,7 @@
         <div class="quote-copy">
           <p class="kicker">Hablemos</p>
           <h2>Contanos qué necesitás. Te ayudamos a resolverlo.</h2>
-          <p>Para cotizar, indicá el origen, el destino, la fecha y la cantidad de envíos. Si necesitás repartos frecuentes, contanos cuántos hacés por semana.</p>
+          <p>Decinos de dónde sale el pedido y a dónde tiene que llegar. Si ya sabés cuándo o cuántos envíos necesitás, podés agregarlo en el mensaje.</p>
 
           <div class="contact-boxes">
             <a href="https://wa.me/5493517059319?text=Hola%2C%20RR%203PL.%20Quiero%20cotizar%20un%20env%C3%ADo.%20Origen%3A%20__.%20Destino%3A%20__.%20Fecha%3A%20__.%20Cantidad%20de%20env%C3%ADos%3A%20__." target="_blank" rel="noreferrer">+54 351 705 9319</a>
@@ -288,38 +288,20 @@
             <input type="text" name="empresa" placeholder="Ej: Dermocosmética Córdoba" required />
           </label>
 
-          <label>
-            Teléfono
-            <input type="tel" name="telefono" placeholder="Ej: 351..." required />
-          </label>
 
-          <label>
-            Servicio que necesitás
-            <select name="servicio" required>
-              <option value="">Seleccionar</option>
-              <option>Cadetería privada / entregas</option>
-              <option>Seguimiento en tiempo real</option>
-              <option>Cobranzas y rendición</option>
-              <option>Trámites / comisionista</option>
-              <option>Logística inversa</option>
-              <option>Servicio on-demand</option>
-              <option>Servicio integral 3PL</option>
-            </select>
-          </label>
+
+
 
           <label>Origen <input name="origen" required></label>
           <label>Destino <input name="destino" required></label>
-          <label>Fecha <input type="date" name="fecha" required></label>
-          <label>Cantidad de envíos <input type="number" name="cantidad" min="1" step="1" required></label>
 
-          <label>
-            Frecuencia (si son envíos recurrentes)
-            <input type="text" name="volumen" placeholder="Ej: 50 entregas semanales" />
-          </label>
+
+
+
 
           <label class="full">
-            Detalle de la operación
-            <textarea name="detalle" rows="6" placeholder="Zonas, horarios, tipo de producto, cobranzas, urgencias, devoluciones, frecuencia, etc."></textarea>
+            Detalle (opcional)
+            <textarea name="detalle" rows="3" placeholder="Fecha, cantidad de envíos u otro dato útil"></textarea>
           </label>
 
           <button class="button button-dark full" type="submit">Continuar en WhatsApp</button>
@@ -348,15 +330,9 @@
             <input type="text" name="nombre" placeholder="Tu nombre completo" required />
           </label>
 
-          <label>
-            Teléfono
-            <input type="tel" name="telefono" placeholder="351..." required />
-          </label>
 
-          <label>
-            Email
-            <input type="email" name="email" placeholder="tuemail@gmail.com" />
-          </label>
+
+
 
           <label>
             Vehículo
@@ -374,21 +350,9 @@
             <input type="text" name="zona" placeholder="Ej: Centro, Nueva Córdoba, Zona Norte" />
           </label>
 
-          <label>
-            Disponibilidad
-            <select name="disponibilidad">
-              <option>Mañana</option>
-              <option>Tarde</option>
-              <option>Noche</option>
-              <option>Part time</option>
-              <option>Full time</option>
-            </select>
-          </label>
 
-          <label class="full">
-            Experiencia / comentarios
-            <textarea name="comentarios" rows="6" placeholder="Contanos si ya trabajaste en reparto, logística, apps o cadetería."></textarea>
-          </label>
+
+
 
           <button class="button button-dark full" type="submit">Continuar en WhatsApp</button>
         </form>

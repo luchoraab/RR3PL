@@ -43,16 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = new FormData(quoteForm);
       const msg = buildWhatsAppMessage("Hola RR 3PL, quiero solicitar una propuesta de servicios logísticos:", {
         "Empresa / Nombre": data.get("empresa"),
-        "Teléfono": data.get("telefono"),
-        "Servicio": data.get("servicio"),
         "Origen": data.get("origen"),
         "Destino": data.get("destino"),
-        "Fecha": data.get("fecha"),
-        "Cantidad de envíos": data.get("cantidad"),
-        "Frecuencia": data.get("volumen"),
         "Detalle": data.get("detalle"),
       });
-      window.open(`https://wa.me/5493517059319?text=${msg}`, "_blank", "noopener,noreferrer");
+      window.location.assign(`https://wa.me/5493517059319?text=${msg}`);
     });
   }
 
@@ -63,14 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = new FormData(workForm);
       const msg = buildWhatsAppMessage("Hola RR 3PL, quiero postularme para trabajar como cadete:", {
         "Nombre y apellido": data.get("nombre"),
-        "Teléfono": data.get("telefono"),
-        "Email": data.get("email"),
         "Vehículo": data.get("vehiculo"),
         "Zona": data.get("zona"),
-        "Disponibilidad": data.get("disponibilidad"),
-        "Experiencia / comentarios": data.get("comentarios"),
       });
-      window.open(`https://wa.me/5493517059319?text=${msg}`, "_blank", "noopener,noreferrer");
+      window.location.assign(`https://wa.me/5493517059319?text=${msg}`);
     });
   }
 });
