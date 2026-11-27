@@ -88,8 +88,8 @@ body{background:radial-gradient(ellipse 46% 58% at 12% 15%,rgba(91,104,131,.34),
   overflow:hidden; align-items:center; justify-content:center; }
 .rr-preintro .intro-scene {display:flex}
 .rr-preintro body {overflow:hidden}
-.rr-preintro .portal {opacity:0; transform:translateY(10px)}
-.rr-intro-complete .portal {animation:rrLandingIn 850ms cubic-bezier(.2,.8,.2,1) both}
+
+
 .intro-lights {position:absolute;inset:-30%;background:radial-gradient(circle at 30% 42%,rgba(255,255,255,.15),transparent 25%),radial-gradient(circle at 72% 46%,rgba(36,91,174,.27),transparent 32%);filter:blur(55px);animation:introPulse 4s ease-in-out infinite alternate}
 .intro-center {z-index:1;display:flex;flex-direction:column;align-items:center;gap:18px;width:min(520px,78vw);transform:translateY(-12px)}
 .intro-monogram {width:min(360px,64vw);height:auto;max-height:235px;object-fit:contain;filter:drop-shadow(0 16px 50px rgba(255,255,255,.17));animation:rrMonogramIn 900ms cubic-bezier(.18,.82,.25,1) both}
@@ -106,7 +106,7 @@ body::after {content:"";position:fixed;inset:0;pointer-events:none;background:ra
 @keyframes rrMonogramIn {0%{opacity:0;filter:blur(18px);transform:scale(.8) translateY(30px)}100%{opacity:1;filter:blur(0) drop-shadow(0 16px 50px rgba(255,255,255,.17));transform:scale(1) translateY(0)}}
 @keyframes rrIntroLine {from{width:0;opacity:0}to{width:min(410px,70vw);opacity:1}}
 @keyframes rrIntroName {from{opacity:0;filter:blur(10px);transform:translateY(10px)}to{opacity:1;filter:blur(0);transform:translateY(0)}}
-@keyframes rrIntroFade {0%{opacity:1;filter:blur(0)}100%{opacity:0;filter:blur(12px)}}
+@keyframes rrIntroFade {from{opacity:1}to{opacity:0}}
 @keyframes rrLandingIn {from{opacity:0;filter:blur(11px);transform:translateY(18px)}to{opacity:1;filter:blur(0);transform:translateY(0)}}
 @keyframes rrBackdropBreathe {from{opacity:.5;transform:translateY(0)}to{opacity:1;transform:translateY(-2%)}}
 @keyframes introPulse {from{transform:translateX(-2%) scale(1);opacity:.55}to{transform:translateX(3%) scale(1.04);opacity:1}}
@@ -428,3 +428,5 @@ body::after {content:"";position:fixed;inset:0;pointer-events:none;background:ra
   57% { opacity: 1; }
   100% { opacity: .36; transform: scale(1.18); }
 }
+
+html{scrollbar-gutter:stable}.team-person .profile-link{display:block}.profile-link:focus-visible{outline:3px solid white;outline-offset:-4px}

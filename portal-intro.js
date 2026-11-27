@@ -4,15 +4,12 @@
   if (!scene || !portal) return;
   const skip = scene.querySelector('#introSkip');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  let seen = false;
-  try { seen = sessionStorage.getItem('rr_intro_seen') === '1'; } catch {}
-  if (seen || motion.matches || location.hash) {
+  const root = document.documentElement;
+  if (!root.classList.contains('rr-preintro')) {
     scene.remove();
     return;
   }
-
-  const root = document.documentElement;
-  root.classList.add('rr-preintro');
+  clearTimeout(window.rrIntroFallback);
   portal.inert = true;
   skip.focus({ preventScroll: true });
   const timer = setTimeout(finish, 3050);
@@ -24,15 +21,14 @@
     if (event.key === 'Escape') finish();
   }
 
-  function finish() {
+  function finish(event) {
     if (!root.classList.contains('rr-preintro')) return;
     clearTimeout(timer);
     document.removeEventListener('keydown', onKey);
     motion.removeEventListener('change', finish);
-    root.classList.remove('rr-preintro');
-    root.classList.add('rr-intro-complete');
+    root.classList.replace('rr-preintro', 'rr-intro-complete');
     portal.inert = false;
-    if (document.activeElement === skip) {
+    if (document.activeElement === skip && event) {
       portal.querySelector('.choice-card')?.focus({ preventScroll: true });
     }
     scene.inert = true;
