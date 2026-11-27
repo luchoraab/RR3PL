@@ -331,3 +331,39 @@
     opacity: .42;
   }
 }
+
+/* Match the floating Grupo RAAB header used by the other units. */
+.site-header {
+  top: 10px;
+  width: min(1240px, calc(100% - 24px));
+  margin: 10px auto 0;
+  border: 1px solid #384459;
+  border-radius: 24px;
+  background: rgba(15, 21, 32, .96);
+  color: #f8fafc;
+  box-shadow: 0 16px 32px #10182733;
+}
+.site-header .header-inner { height: 66px; width: calc(100% - 28px); }
+.site-header .primary-nav a:not(.nav-cta) { color: #f1f5f9; }
+.site-header .menu-toggle { background: #273244; border-color: #48556b; }
+.site-header .menu-toggle span { background: #fff; }
+
+@media (max-width: 1000px) {
+  .site-header .menu-toggle { display: flex; }
+  .site-header .primary-nav {
+    display: none;
+    position: absolute;
+    inset: calc(100% + 8px) 0 auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 12px;
+    max-height: calc(100dvh - 100px);
+    overflow-y: auto;
+    border: 1px solid #384459;
+    border-radius: 18px;
+    background: #111827;
+  }
+  .site-header .primary-nav.open { display: flex; }
+  .site-header .primary-nav a { padding: 12px; }
+}
