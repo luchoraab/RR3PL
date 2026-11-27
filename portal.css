@@ -168,6 +168,7 @@ body::after {content:"";position:fixed;inset:0;pointer-events:none;background:ra
 
 .team-person img {
   width: 100%;
+  height: auto;
   aspect-ratio: 3 / 4;
   object-fit: cover;
   object-position: center top;
@@ -247,7 +248,7 @@ body::after {content:"";position:fixed;inset:0;pointer-events:none;background:ra
     gap: 12px;
   }
   .team-person { display: flex; flex-direction: column; border-radius: 14px; }
-  .team-person img { display: block; aspect-ratio: 4 / 5; object-position: center top; }
+  .team-person img { display: block; aspect-ratio: 1; object-position: var(--portrait-position, center top); }
   .team-person figcaption { flex: 1; min-height: 65px; padding: 10px 5px; }
   .team-person--luciano {
     grid-area: luciano;
@@ -255,7 +256,7 @@ body::after {content:"";position:fixed;inset:0;pointer-events:none;background:ra
     grid-template-columns: minmax(0, 45%) minmax(0, 1fr);
     align-items: stretch;
   }
-  .team-person--luciano img { aspect-ratio: 1; }
+  .team-person--luciano .profile-link { align-self: center; }
   .team-person--luciano figcaption { text-align: left; padding: 16px; }
   .team-person--luciano strong { font-size: clamp(1.05rem, 4vw, 1.65rem); }
   .team-person--rocio { grid-area: rocio; }

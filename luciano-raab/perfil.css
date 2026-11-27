@@ -5,7 +5,7 @@ header,main{width:min(1080px,90%);margin:auto}
 header{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid #515a6c}
 header img{display:block;width:165px}
 a{color:inherit;text-underline-offset:5px}
-header>a:last-child{padding:5px 18px;border:1px solid #596476;border-radius:30px;text-decoration:none;background:#2f384a55;backdrop-filter:blur(8px)}
+header>a:last-child,.profile-jumps a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:5px 18px;border:1px solid #596476;border-radius:30px;text-decoration:none;background:#2f384a55;backdrop-filter:blur(8px)}
 .hero,.chapter{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(22px,6vw,90px);padding:clamp(36px,7vw,85px) 0}
 .label{font-size:.88rem;color:#bdcce2;letter-spacing:.06em}
 h1,h2,h3{line-height:1.08;margin:0}
@@ -142,4 +142,6 @@ footer a{display:inline-block;margin:20px 24px 0 0}
 .gallery-filters button:focus-visible { outline: 2px solid #d8e7ff; outline-offset: 2px; }
 
 .profile-jumps { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.25rem; }
-.profile-jumps a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: .8rem; border: 1px solid #606e83; border-radius: 2rem; }
+@media (max-width: 460px) {
+  .profile-jumps a { padding-inline: clamp(.65rem, 3vw, 1rem); font-size: clamp(.825rem, 3.7vw, 1rem); }
+}
