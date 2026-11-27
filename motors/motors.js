@@ -134,7 +134,7 @@
     const reason = form?.elements.namedItem('motivo');
     if (reason) reason.value = 'Alquiler de vehículo';
     updateShifts();
-    if (form) form.scrollIntoView({behavior: 'smooth', block: 'center'});
+    if (form && !form.closest('dialog')) form.scrollIntoView({behavior: 'smooth', block: 'center'});
   }));
   form?.addEventListener('submit', event => {
     event.preventDefault();

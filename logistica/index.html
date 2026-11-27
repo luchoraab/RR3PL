@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>RR 3PL | Cadetería y logística tercerizada en Córdoba</title>
-  <meta name="description" content="Tercerizá tus entregas con RR 3PL en Córdoba. Cadetería privada, cobranzas, trámites y devoluciones con seguimiento operativo. Pedí tu propuesta." />
+  <meta name="description" content="RR Logística ofrece cadetería para empresas y comercios en Córdoba, con retiros, entregas, cobranzas y devoluciones. Pedí una cotización para tu envío." />
   <meta name="theme-color" content="#f4f5f7" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="author" content="RR 3PL · Grupo Raab" />
@@ -20,15 +20,17 @@
   <meta property="og:locale" content="es_AR" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="RR 3PL | Cadetería y logística privada en Córdoba" />
-  <meta name="twitter:description" content="Delegá entregas, gestiones y postventa. Seguimiento operativo y cierre documentado para empresas de Córdoba." />
+  <meta name="twitter:description" content="RR Logística ofrece cadetería para empresas y comercios en Córdoba, con retiros, entregas, cobranzas y devoluciones. Pedí una cotización para tu envío." />
   <meta name="twitter:image" content="https://rr-raab.com/logistica/assets/brand-raab-navbar.png" />
 
   <meta property="og:title" content="RR 3PL | Logística tercerizada para empresas" />
-  <meta property="og:description" content="Seguí vendiendo. De la operación nos encargamos nosotros." />
+  <meta property="og:description" content="RR Logística ofrece cadetería para empresas y comercios en Córdoba, con retiros, entregas, cobranzas y devoluciones. Pedí una cotización para tu envío." />
   <meta property="og:image" content="https://rr-raab.com/logistica/assets/rr-3pl-logo.png" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://rr-raab.com/logistica/#empresa","name":"RR 3PL · Third-Party Logistics","alternateName":"RR Third-Party Logistics","url":"https://rr-raab.com/logistica/","logo":"https://rr-raab.com/logistica/assets/rr-3pl-logo.png","image":"https://rr-raab.com/logistica/assets/grupo-raab.jpg","description":"Cadetería privada y servicios de logística tercerizada para empresas, comercios y profesionales en Córdoba, Argentina.","telephone":"+54-9-351-705-9319","email":"contacto@rr-raab.com","address":{"@type":"PostalAddress","streetAddress":"Prudencio Bustos 152","addressLocality":"Córdoba","addressRegion":"Córdoba","addressCountry":"AR"},"areaServed":{"@type":"AdministrativeArea","name":"Córdoba, Argentina"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios RR 3PL","itemListElement":[{"@type":"OfferCatalog","name":"Cadetería privada"},{"@type":"OfferCatalog","name":"Seguimiento operativo de envíos"},{"@type":"OfferCatalog","name":"Cobranzas y rendición"},{"@type":"OfferCatalog","name":"Trámites y comisionista"},{"@type":"OfferCatalog","name":"Logística inversa"},{"@type":"OfferCatalog","name":"Entregas on-demand"}]}}</script>
+  <link rel="stylesheet" href="../consultation-dialog.css">
+  <script src="../consultation-dialog.js" defer></script>
 </head>
 <body>
   <div class="top-line" id="topLine"></div>
@@ -279,7 +281,7 @@
           </div>
         </div>
 
-        <form class="form-card" id="quoteForm">
+        <form class="form-card" id="quoteForm" data-dialog-title="Cotizar un envío">
           <label>
             Nombre / Empresa
             <input type="text" name="empresa" placeholder="Ej: Dermocosmética Córdoba" required />
@@ -314,7 +316,7 @@
             <textarea name="detalle" rows="6" placeholder="Zonas, horarios, tipo de producto, cobranzas, urgencias, devoluciones, frecuencia, etc."></textarea>
           </label>
 
-          <button class="button button-dark full" type="submit">Enviar solicitud por WhatsApp</button>
+          <button class="button button-dark full" type="submit">Continuar en WhatsApp</button>
         </form>
       </div>
     </section>
@@ -334,7 +336,7 @@
           </div>
         </div>
 
-        <form class="form-card" id="workForm">
+        <form class="form-card" id="workForm" data-dialog-title="Postularme como cadete">
           <label>
             Nombre y apellido
             <input type="text" name="nombre" placeholder="Tu nombre completo" required />
@@ -382,7 +384,7 @@
             <textarea name="comentarios" rows="6" placeholder="Contanos si ya trabajaste en reparto, logística, apps o cadetería."></textarea>
           </label>
 
-          <button class="button button-dark full" type="submit">Enviar postulación</button>
+          <button class="button button-dark full" type="submit">Continuar en WhatsApp</button>
         </form>
       </div>
     </section>
