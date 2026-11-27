@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById("siteHeader");
   const topLine = document.getElementById("topLine");
-  const menuButton = document.getElementById("menuButton");
-  const mainNav = document.getElementById("mainNav");
 
   const updateScroll = () => {
     if (header) header.classList.toggle("compact", window.scrollY > 16);
@@ -16,20 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateScroll();
   window.addEventListener("scroll", updateScroll);
-
-  if (menuButton && mainNav) {
-    menuButton.addEventListener("click", () => {
-      const open = mainNav.classList.toggle("open");
-      menuButton.setAttribute("aria-expanded", String(open));
-    });
-  }
-
-  document.querySelectorAll(".main-nav a").forEach((link) => {
-    link.addEventListener("click", () => {
-      if (mainNav) mainNav.classList.remove("open");
-      if (menuButton) menuButton.setAttribute("aria-expanded", "false");
-    });
-  });
 
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(entries => {
@@ -61,10 +45,14 @@ document.addEventListener("DOMContentLoaded", () => {
         "Empresa / Nombre": data.get("empresa"),
         "Teléfono": data.get("telefono"),
         "Servicio": data.get("servicio"),
-        "Volumen estimado": data.get("volumen"),
+        "Origen": data.get("origen"),
+        "Destino": data.get("destino"),
+        "Fecha": data.get("fecha"),
+        "Cantidad de envíos": data.get("cantidad"),
+        "Frecuencia": data.get("volumen"),
         "Detalle": data.get("detalle"),
       });
-      window.open(`https://wa.me/5493517059319?text=${msg}`, "_blank");
+      window.open(`https://wa.me/5493517059319?text=${msg}`, "_blank", "noopener,noreferrer");
     });
   }
 
@@ -82,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Disponibilidad": data.get("disponibilidad"),
         "Experiencia / comentarios": data.get("comentarios"),
       });
-      window.open(`https://wa.me/5493517059319?text=${msg}`, "_blank");
+      window.open(`https://wa.me/5493517059319?text=${msg}`, "_blank", "noopener,noreferrer");
     });
   }
 });

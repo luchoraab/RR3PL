@@ -1,14 +1,6 @@
 (() => {
   'use strict';
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const menu = document.querySelector('.mobile-menu');
-  const nav = document.querySelector('#digital-nav');
-  function closeMenu() { nav?.classList.remove('open'); menu?.setAttribute('aria-expanded','false'); menu?.setAttribute('aria-label','Abrir menú'); }
-  if (menu && nav) {
-    menu.addEventListener('click', () => { const open = nav.classList.toggle('open'); menu.setAttribute('aria-expanded',String(open)); menu.setAttribute('aria-label', open?'Cerrar menú':'Abrir menú'); });
-    nav.querySelectorAll('a').forEach(a => a.addEventListener('click',closeMenu));
-    document.addEventListener('keydown', e => { if(e.key==='Escape') closeMenu(); });
-  }
   const form = document.querySelector('#digitalForm');
   const projectSelect = document.querySelector('#tipoProyecto');
   document.querySelectorAll('[data-project]').forEach(a => a.addEventListener('click', () => { if (projectSelect) projectSelect.value=a.dataset.project||''; }));

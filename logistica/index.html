@@ -31,6 +31,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://rr-raab.com/logistica/#empresa","name":"RR 3PL · Third-Party Logistics","alternateName":"RR Third-Party Logistics","url":"https://rr-raab.com/logistica/","logo":"https://rr-raab.com/logistica/assets/rr-3pl-logo.png","image":"https://rr-raab.com/logistica/assets/grupo-raab.jpg","description":"Cadetería privada y servicios de logística tercerizada para empresas, comercios y profesionales en Córdoba, Argentina.","telephone":"+54-9-351-705-9319","email":"contacto@rr-raab.com","address":{"@type":"PostalAddress","streetAddress":"Prudencio Bustos 152","addressLocality":"Córdoba","addressRegion":"Córdoba","addressCountry":"AR"},"areaServed":{"@type":"AdministrativeArea","name":"Córdoba, Argentina"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios RR 3PL","itemListElement":[{"@type":"OfferCatalog","name":"Cadetería privada"},{"@type":"OfferCatalog","name":"Seguimiento operativo de envíos"},{"@type":"OfferCatalog","name":"Cobranzas y rendición"},{"@type":"OfferCatalog","name":"Trámites y comisionista"},{"@type":"OfferCatalog","name":"Logística inversa"},{"@type":"OfferCatalog","name":"Entregas on-demand"}]}}</script>
   <link rel="stylesheet" href="../consultation-dialog.css">
   <script src="../consultation-dialog.js" defer></script>
+  <script src="../floating-menu.js" defer></script>
 </head>
 <body>
   <div class="top-line" id="topLine"></div>
@@ -40,7 +41,7 @@
       <img src="assets/logo-grupo-raab-navbar.png" alt="Grupo Raab" width="2048" height="682" />
     </a>
 
-    <button class="menu-button" id="menuButton" aria-label="Abrir menú" aria-expanded="false">
+    <button class="menu-button" data-floating-menu type="button" id="menuButton" aria-controls="mainNav" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
 
@@ -306,8 +307,13 @@
             </select>
           </label>
 
+          <label>Origen <input name="origen" required></label>
+          <label>Destino <input name="destino" required></label>
+          <label>Fecha <input type="date" name="fecha" required></label>
+          <label>Cantidad de envíos <input type="number" name="cantidad" min="1" step="1" required></label>
+
           <label>
-            Volumen estimado
+            Frecuencia (si son envíos recurrentes)
             <input type="text" name="volumen" placeholder="Ej: 50 entregas semanales" />
           </label>
 

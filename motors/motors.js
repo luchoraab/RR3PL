@@ -1,24 +1,5 @@
 (() => {
   'use strict';
-  const menu = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.primary-nav');
-  if (menu && nav) {
-    const close = () => {
-      nav.classList.remove('open');
-      menu.setAttribute('aria-expanded', 'false');
-      menu.setAttribute('aria-label', 'Abrir menú');
-    };
-    menu.addEventListener('click', () => {
-      const expanded = nav.classList.toggle('open');
-      menu.setAttribute('aria-expanded', String(expanded));
-      menu.setAttribute('aria-label', expanded ? 'Cerrar menú' : 'Abrir menú');
-    });
-    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', close));
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape') close();
-    });
-  }
-
   // Carrusel real: avance automático, flechas, swipe, teclado y pausa accesible.
   const track = document.querySelector('#vehicleTrack');
   if (track) {
@@ -118,6 +99,26 @@
   const form = document.querySelector('#contactForm');
   const vehicle = document.querySelector('#vehiculo');
   const shift = form?.elements.namedItem('turno');
+  const reason = form?.elements.namedItem('motivo');
+  const rentalFields = form?.querySelectorAll('[data-rental]') ?? [];
+  const detail = form?.elements.namedItem('mensaje');
+
+  const updateFields = () => {
+    const rental = reason?.value === 'Alquiler de vehículo';
+    rentalFields.forEach(label => {
+      label.hidden = !rental;
+      const field = label.querySelector('input, select');
+      field.style.display = rental ? '' : 'none';
+      field.disabled = !rental;
+      field.required = rental;
+    });
+    if (vehicle) vehicle.required = rental;
+    if (detail) detail.required = !rental;
+    const label = document.getElementById('motors-detail-label');
+    if (label) label.textContent = rental ? 'Mensaje adicional (opcional)' : 'Contanos qué problema tiene el vehículo';
+    updateShifts();
+  };
+
   const updateShifts = () => {
     if (!shift) return;
     for (const option of shift.options) {
@@ -128,12 +129,13 @@
   };
 
   vehicle?.addEventListener('change', updateShifts);
-  updateShifts();
+  reason?.addEventListener('change', updateFields);
+  document.querySelectorAll('[data-service]').forEach(link => link.addEventListener('click', updateFields));
+  updateFields();
   document.querySelectorAll('[data-ask]').forEach(button => button.addEventListener('click', () => {
     if (vehicle) vehicle.value = button.dataset.ask || '';
-    const reason = form?.elements.namedItem('motivo');
     if (reason) reason.value = 'Alquiler de vehículo';
-    updateShifts();
+    updateFields();
     if (form && !form.closest('dialog')) form.scrollIntoView({behavior: 'smooth', block: 'center'});
   }));
   form?.addEventListener('submit', event => {
@@ -147,7 +149,7 @@
       `Teléfono: ${data.get('telefono')}`,
       `Consulta: ${data.get('motivo')}`,
     ];
-    for (const [field, label] of [['vehiculo','Vehículo'],['turno','Turno'],['mensaje','Detalle']]) {
+    for (const [field, label] of [['vehiculo','Vehículo'],['fecha','Fecha'],['turno','Turno'],['mensaje','Detalle']]) {
       const value = String(data.get(field) || '').trim();
       if (value) lines.push(`${label}: ${value}`);
     }
