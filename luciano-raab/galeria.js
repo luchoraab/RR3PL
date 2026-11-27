@@ -1,6 +1,6 @@
 const gallery = document.querySelector('.gallery');
 const controls = document.querySelector('.gallery-controls');
-const slides = [...gallery.querySelectorAll('img')];
+const slides = [...gallery.querySelectorAll('img, video')];
 const playback = controls.querySelector('.gallery-play');
 const counter = controls.querySelector('.gallery-count');
 const motion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -10,6 +10,7 @@ let playing = !motion.matches;
 let timer;
 
 function show(index) {
+  if (slides[current] instanceof HTMLVideoElement) slides[current].pause();
   slides[current].classList.remove('current');
   slides[current].setAttribute('aria-hidden', 'true');
   current = (index + slides.length) % slides.length;
@@ -17,6 +18,11 @@ function show(index) {
   slides[current].removeAttribute('aria-hidden');
   counter.textContent = `${current + 1} / ${slides.length}`;
 }
+
+gallery.addEventListener('play', () => {
+  playing = false;
+  schedule();
+}, true);
 
 function schedule() {
   clearInterval(timer);
