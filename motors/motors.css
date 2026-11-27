@@ -383,3 +383,7 @@
   }
   .hero-car { animation: none; }
 }
+
+.slide-arrow:disabled { opacity: .45; cursor: default; }
+.vehicle-body { display: flex; flex-direction: column; }
+.vehicle-body .vehicle-cta { margin-top: auto; }

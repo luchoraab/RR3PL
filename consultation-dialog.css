@@ -69,3 +69,8 @@
   .consultation-dialog :is(input, select, textarea) { font-size: 16px; }
   .consultation-dialog :is(.form-grid,.form-row) { grid-template-columns: minmax(0, 1fr); }
 }
+
+:where(.consultation-open, .consultation-close, .consultation-dialog :is(input, select, textarea, button, a)):focus-visible {
+  outline: 3px solid #4b79c1;
+  outline-offset: 2px;
+}

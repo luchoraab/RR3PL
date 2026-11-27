@@ -8,24 +8,31 @@
     const counter = document.querySelector('#fleetIndex');
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-    function stride() {
-      const first = cards[0];
-      if (!first) return track.clientWidth;
-      const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || '0');
-      return first.getBoundingClientRect().width + (Number.isFinite(gap) ? gap : 0);
-    }
-    function index() {
-      return Math.max(0, Math.min(cards.length - 1, Math.round(track.scrollLeft / stride())));
-    }
+    const previous = document.querySelector('#prev');
+    const next = document.querySelector('#next');
+    const maxScroll = () => Math.max(0, track.scrollWidth - track.clientWidth);
+    const cardLeft = card => card.getBoundingClientRect().left - track.getBoundingClientRect().left + track.scrollLeft;
+
     function sync() {
-      const current = index();
-      if (counter) counter.textContent = String(current + 1).padStart(2, '0') + ' / ' + String(cards.length).padStart(2, '0');
-      if (progress) progress.style.width = (((current + 1) / cards.length) * 100) + '%';
+      const bounds = track.getBoundingClientRect();
+      const visible = cards.map((card, index) => {
+        const rect = card.getBoundingClientRect();
+        const overlap = Math.min(rect.right, bounds.right) - Math.max(rect.left, bounds.left);
+        return overlap >= Math.min(rect.width, bounds.width) / 2 || null;
+      }).map((shown, index) => shown ? index + 1 : 0).filter(Boolean);
+      const first = track.scrollLeft <= 2 ? 1 : visible[0];
+      const last = track.scrollLeft >= maxScroll() - 2 ? cards.length : visible.at(-1);
+      if (counter && first && last) counter.textContent = (first === last ? first : first + '–' + last) + ' de ' + cards.length;
+      if (progress) progress.style.width = (last / cards.length * 100) + '%';
+      previous.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft >= maxScroll() - 2;
     }
     function step(direction) {
-      const next = index() + direction;
-      const atEnd = next >= cards.length || track.scrollLeft >= track.scrollWidth - track.clientWidth - 8 && direction > 0;
-      track.scrollTo({left: atEnd ? 0 : Math.max(0, next) * stride(), behavior: reduced.matches ? 'instant' : 'smooth'});
+      const positions = cards.map(card => Math.max(0, Math.min(maxScroll(), cardLeft(card))));
+      const position = direction > 0
+        ? positions.find(left => left > track.scrollLeft + 2)
+        : positions.findLast(left => left < track.scrollLeft - 2);
+      if (position !== undefined) track.scrollTo({left: position, behavior: reduced.matches ? 'instant' : 'smooth'});
     }
     document.querySelector('#prev')?.addEventListener('click', () => { step(-1); });
     document.querySelector('#next')?.addEventListener('click', () => { step(1); });
@@ -34,6 +41,7 @@
       if (event.key === 'ArrowLeft') { event.preventDefault(); step(-1); }
     });
     track.addEventListener('scroll', sync, {passive:true});
+    window.addEventListener('resize', sync);
     sync();
   }
 
@@ -97,9 +105,10 @@
 
   const updateShifts = () => {
     if (!shift) return;
+    const card = Array.from(track?.querySelectorAll('[data-car]') ?? []).find(item => item.dataset.car === vehicle?.value);
+    const offered = Array.from(card?.querySelectorAll('.rate small') ?? [], item => item.textContent.trim().toLowerCase());
     for (const option of shift.options) {
-      option.disabled = (vehicle?.value === 'Volkswagen Gol' && option.value === '24 horas')
-        || (vehicle?.value === 'Nissan Versa' && option.value === '12 horas');
+      option.disabled = Boolean(card && option.value && !offered.includes(option.value.toLowerCase()));
     }
     if (shift.selectedOptions[0]?.disabled) shift.value = '';
   };

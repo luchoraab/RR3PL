@@ -2,6 +2,7 @@
   if (typeof HTMLDialogElement === 'undefined' || !HTMLDialogElement.prototype.showModal) return;
 
   const dialogs = new Map();
+  const triggers = new WeakMap();
   for (const form of document.querySelectorAll('form[data-dialog-title]')) {
     const section = form.closest('section[id]');
     if (!section) continue;
@@ -30,14 +31,15 @@
     opener.textContent = form.dataset.dialogTitle;
     opener.setAttribute('aria-haspopup', 'dialog');
     opener.setAttribute('aria-controls', dialog.id);
-    opener.addEventListener('click', () => dialog.showModal());
+    opener.addEventListener('click', () => open(dialog, opener));
 
     header.append(title, close);
     form.replaceWith(opener);
     form.removeAttribute('data-reveal');
     dialog.append(header, form);
     dialog.addEventListener('close', () => {
-      if (document.activeElement === document.body) opener.focus({ preventScroll: true });
+      const trigger = triggers.get(dialog);
+      (trigger?.getClientRects().length ? trigger : opener).focus({ preventScroll: true });
     });
     document.body.append(dialog);
     section.firstElementChild?.classList.add('consultation-layout');
@@ -48,6 +50,12 @@
     }
   }
 
+  function open(dialog, trigger) {
+    if (dialog.open) return;
+    triggers.set(dialog, trigger);
+    dialog.showModal();
+  }
+
   document.addEventListener('click', event => {
     const trigger = event.target.closest('a[href^="#"], [data-ask]');
     if (!trigger || event.defaultPrevented || event.button !== 0 ||
@@ -55,7 +63,7 @@
     const dialog = dialogs.get(trigger.hasAttribute('data-ask') ? '#contacto' : trigger.getAttribute('href'));
     if (!dialog) return;
     event.preventDefault();
-    if (!dialog.open) dialog.showModal();
+    open(dialog, trigger);
   });
 
   const linkedDialog = dialogs.get(location.hash);
