@@ -47,7 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
         "Destino": data.get("destino"),
         "Detalle": data.get("detalle"),
       });
-      window.location.assign(`https://wa.me/5493517059319?text=${msg}`);
+      const link = document.createElement('a');
+      link.href = `https://wa.me/5493517059319?text=${msg}`;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.click();
     });
   }
 
@@ -61,7 +65,11 @@ document.addEventListener("DOMContentLoaded", () => {
         "Vehículo": data.get("vehiculo"),
         "Zona": data.get("zona"),
       });
-      window.location.assign(`https://wa.me/5493517059319?text=${msg}`);
+      const link = document.createElement('a');
+      link.href = `https://wa.me/5493517059319?text=${msg}`;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.click();
     });
   }
 });

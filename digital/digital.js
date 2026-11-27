@@ -11,7 +11,11 @@
     const lines = ['Hola, quiero consultar a RR Digital Solutions.', '', `Nombre: ${d.get('nombre')}`, `Proyecto: ${d.get('proyecto')}`];
     lines.push(`Idea: ${d.get('idea')}`);
     const url='https://wa.me/5493517059319?text='+encodeURIComponent(lines.join('\n'));
-    window.location.assign(url);
+    const link = document.createElement('a');
+      link.href = url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.click();
   });
   if ('IntersectionObserver' in window && !reduced.matches) {
     document.documentElement.classList.add('js-enabled');

@@ -392,3 +392,5 @@
 .rental-requirements ul { padding-inline-start: 1.25rem; }
 .rental-requirements li + li { margin-top: .35rem; }
 .vehicle-body .rates { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+#funcionamiento, #flota, #servicios { scroll-margin-top: 94px; }

@@ -217,7 +217,7 @@ body::after {content:"";position:fixed;inset:0;pointer-events:none;background:ra
 .team-person--kevin { --portrait-position: center top; }
 .team-person--celeste { --portrait-position: center 35%; }
 .team-person--luciano { --portrait-position: 63% center; }
-.team-person--dylan img { scale: -1 1; }
+
 
 .team-person figcaption {
   display: grid;
@@ -428,3 +428,18 @@ html{scrollbar-gutter:stable}.team-person .profile-link{display:block}.profile-l
 .choice-bottom > div { display: grid; gap: .35rem; }
 .choice-action { color: #fff; font-size: .9rem; font-weight: 700; }
 .team-profile-action { display: block; margin-top: .25rem; font-size: .82rem; }
+
+.choice-bottom > div { height: 100%; grid-template-rows: auto 1fr auto; }
+.choice-card { grid-template-rows: auto auto 1fr; }
+.team-person figcaption { background: #232832; }
+.team-person--luciano figcaption { background: #2a303b; }
+.team-person figcaption span { color: #dce1e9; }
+@media (max-width: 820px) {
+  .team-person:not(.team-person--luciano) figcaption { min-height: 76px; }
+  .team-person--kevin { --portrait-position: center 18%; }
+  .team-person--celeste { --portrait-position: center 21%; }
+  .team-person--franco { --portrait-position: center 20%; }
+  .team-person--zacarias { --portrait-position: center 18%; }
+  .team-person--dylan { --portrait-position: center 20%; }
+  .team-person--rocio { --portrait-position: center 13%; }
+}

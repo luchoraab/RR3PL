@@ -22,7 +22,10 @@
       }).map((shown, index) => shown ? index + 1 : 0).filter(Boolean);
       const first = track.scrollLeft <= 2 ? 1 : visible[0];
       const last = track.scrollLeft >= maxScroll() - 2 ? cards.length : visible.at(-1);
-      if (counter && first && last) counter.textContent = (first === last ? first : first + '–' + last) + ' de ' + cards.length;
+      if (counter && first && last) {
+        const range = (first === last ? 'Vehículo ' + first : 'Vehículos ' + first + ' a ' + last) + ' de ' + cards.length;
+        if (counter.textContent !== range) counter.textContent = range;
+      }
       if (progress) progress.style.width = (last / cards.length * 100) + '%';
       previous.disabled = track.scrollLeft <= 2;
       next.disabled = track.scrollLeft >= maxScroll() - 2;
@@ -138,6 +141,10 @@
       if (value) lines.push(`${label}: ${value}`);
     }
     const url = 'https://wa.me/5493517059319?text=' + encodeURIComponent(lines.join('\n'));
-    window.location.assign(url);
+    const link = document.createElement('a');
+      link.href = url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.click();
   });
 })();

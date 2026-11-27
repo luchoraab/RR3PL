@@ -145,3 +145,12 @@ footer a{display:inline-block;margin:20px 24px 0 0}
 @media (max-width: 460px) {
   .profile-jumps a { padding-inline: clamp(.65rem, 3vw, 1rem); font-size: clamp(.825rem, 3.7vw, 1rem); }
 }
+
+body { background: radial-gradient(ellipse at 82% 8%, #262b35 0, transparent 35%), #121418; }
+main section[id] { scroll-margin-top: 1.5rem; }
+@media (max-width: 460px) {
+  header { gap: .75rem; }
+  header img { width: clamp(125px, 40vw, 165px); }
+  .hero { padding-block: 1.75rem; gap: 1.15rem; }
+  .hero h1 { font-size: clamp(2.4rem, 10vw, 3.25rem); }
+}

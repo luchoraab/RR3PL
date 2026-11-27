@@ -74,3 +74,6 @@
   outline: 3px solid #4b79c1;
   outline-offset: 2px;
 }
+
+.consultation-dialog { scroll-padding-block: 4.5rem 1rem; }
+.consultation-dialog :is(input, select, textarea, button) { scroll-margin-block: .75rem; }
