@@ -27,6 +27,9 @@
   <meta property="og:description" content="RR Motors · RR Third-Party Logistics · RR Digital Solutions">
   <meta property="og:url" content="https://rr-raab.com/"><meta property="og:image" content="https://rr-raab.com/assets/grupo-raab-logo.png">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Grupo RAAB","url":"https://rr-raab.com/","logo":"https://rr-raab.com/assets/grupo-raab-logo.png","subOrganization":[{"@type":"Organization","name":"RR Motors","url":"https://rr-raab.com/motors/"},{"@type":"Organization","name":"RR Third-Party Logistics","url":"https://rr-raab.com/logistica/"},{"@type":"Organization","name":"RR Digital Solutions","url":"https://rr-raab.com/digital/"}]}</script>
+  <link rel="stylesheet" href="consultation-dialog.css">
+  <script src="consultation-dialog.js" defer></script>
+  <script src="careers.js" defer></script>
 </head>
 <body>
   <div class="intro-scene" id="introScene" aria-label="Presentación de Grupo RAAB">
@@ -98,6 +101,24 @@
           <figcaption><strong>Franco Monjes</strong><span>Gerente Administrativo</span></figcaption>
         </figure>
       </div>
+    </section>
+    <section class="portal-careers" id="sumate" aria-labelledby="careers-title">
+      <div>
+        <h2 id="careers-title">Trabajá con nosotros</h2>
+        <p>Contanos en qué área te gustaría trabajar y mandanos tu CV por correo.</p>
+      </div>
+      <form class="careers-form" id="careersForm" data-dialog-title="Enviar mi CV" action="mailto:contacto@rr-raab.com" method="post" enctype="text/plain">
+        <label>Nombre y apellido <input name="nombre" autocomplete="name" maxlength="100" required></label>
+        <label>Área de interés
+          <select name="area" required>
+            <option value="">Elegí un área</option>
+            <option>RR Motors</option><option>RR Logística</option><option>RR Digital Solutions</option><option>Otra área</option>
+          </select>
+        </label>
+        <label>Presentación (opcional) <textarea name="presentacion" rows="3" maxlength="500"></textarea></label>
+        <p>Se abrirá un borrador en tu correo. Adjuntá tu CV, preferentemente en PDF, antes de enviarlo a <a href="mailto:contacto@rr-raab.com">contacto@rr-raab.com</a>.</p>
+        <button type="submit" class="consultation-open">Abrir correo para adjuntar mi CV</button>
+      </form>
     </section>
     <footer class="portal-footer"><span>© 2026 Grupo RAAB</span><a href="mailto:contacto@rr-raab.com">contacto@rr-raab.com</a></footer>
   </main>

@@ -383,3 +383,26 @@ html{scrollbar-gutter:stable}.team-person .profile-link{display:block}.profile-l
   40% { opacity: 1; }
   100% { opacity: 0; background-position: 0 0; }
 }
+
+.portal-careers {
+  margin-top: 2rem;
+  padding: clamp(1rem, 4vw, 2rem);
+  border: 1px solid #49566c;
+  border-radius: 1rem;
+  background: #182234;
+  color: #f8fafc;
+}
+.portal-careers h2 { margin: 0 0 .45rem; }
+.portal-careers p { margin: 0 0 1rem; }
+.careers-form, .careers-form label { display: grid; gap: .6rem; }
+.careers-form :is(input, select, textarea) {
+  width: 100%;
+  min-height: 44px;
+  padding: .6rem;
+  border: 1px solid #8794a8;
+  border-radius: .5rem;
+  background: #fff;
+  color: #151b2a;
+  font: inherit;
+}
+.careers-form a { color: inherit; text-decoration: underline; overflow-wrap: anywhere; }
