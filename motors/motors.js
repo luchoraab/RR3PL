@@ -1,14 +1,12 @@
 (() => {
   'use strict';
-  // Carrusel real: avance automático, flechas, swipe, teclado y pausa accesible.
+  // Carrusel real: navegación manual con flechas, gestos y teclado.
   const track = document.querySelector('#vehicleTrack');
   if (track) {
     const cards = Array.from(track.querySelectorAll('.vehicle-card'));
     const progress = document.querySelector('#fleetProgress');
     const counter = document.querySelector('#fleetIndex');
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-    let autoplay = null;
-    let manualPause = false;
 
     function stride() {
       const first = cards[0];
@@ -28,36 +26,15 @@
       const next = index() + direction;
       const atEnd = next >= cards.length || track.scrollLeft >= track.scrollWidth - track.clientWidth - 8 && direction > 0;
       track.scrollTo({left: atEnd ? 0 : Math.max(0, next) * stride(), behavior: reduced.matches ? 'instant' : 'smooth'});
-      setTimeout(sync, 650);
     }
-    function pause() {
-      manualPause = true;
-      if (autoplay) { clearInterval(autoplay); autoplay = null; }
-    }
-    function resume() {
-      manualPause = false;
-      if (!reduced.matches && !document.hidden && !autoplay) autoplay = setInterval(() => step(1), 4500);
-    }
-    document.querySelector('#prev')?.addEventListener('click', () => { pause(); step(-1); });
-    document.querySelector('#next')?.addEventListener('click', () => { pause(); step(1); });
+    document.querySelector('#prev')?.addEventListener('click', () => { step(-1); });
+    document.querySelector('#next')?.addEventListener('click', () => { step(1); });
     track.addEventListener('keydown', event => {
-      if (event.key === 'ArrowRight') { event.preventDefault(); pause(); step(1); }
-      if (event.key === 'ArrowLeft') { event.preventDefault(); pause(); step(-1); }
+      if (event.key === 'ArrowRight') { event.preventDefault(); step(1); }
+      if (event.key === 'ArrowLeft') { event.preventDefault(); step(-1); }
     });
-    track.addEventListener('mouseenter', pause);
-    track.addEventListener('mouseleave', resume);
-    track.addEventListener('focusin', pause);
-    track.addEventListener('focusout', resume);
-    track.addEventListener('touchstart', pause, {passive:true});
-    track.addEventListener('touchend', () => { sync(); }, {passive:true});
     track.addEventListener('scroll', sync, {passive:true});
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) { if (autoplay) clearInterval(autoplay); autoplay = null; }
-      else if (!manualPause) resume();
-    });
-    reduced.addEventListener?.('change', () => { pause(); if (!reduced.matches) resume(); });
     sync();
-    resume();
   }
 
 

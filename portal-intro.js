@@ -12,7 +12,7 @@
   clearTimeout(window.rrIntroFallback);
   portal.inert = true;
   skip.focus({ preventScroll: true });
-  const timer = setTimeout(finish, 2350);
+  const timer = setTimeout(finish, 950);
   skip.addEventListener('click', finish, { once: true });
   document.addEventListener('keydown', onKey);
   motion.addEventListener('change', finish, { once: true });
@@ -37,6 +37,6 @@
     scene.addEventListener('animationend', e => {
       if (e.target === scene && e.animationName === 'rrIntroFade') cleanup();
     });
-    setTimeout(cleanup, 850);
+    setTimeout(cleanup, 400);
   }
 })();
