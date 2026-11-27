@@ -1,0 +1,35 @@
+.group-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .4rem 1rem;
+  padding: .4rem max(1rem, calc((100% - 72rem) / 2));
+  background: #111827;
+  color: #f8fafc;
+  font: 500 .875rem/1.4 system-ui, sans-serif;
+}
+.group-navigation a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: inherit;
+  padding-inline: .35rem;
+}
+.group-navigation a[aria-current] { text-decoration: underline; text-underline-offset: .3em; }
+.group-navigation a:focus-visible { outline: 2px solid white; outline-offset: 2px; }
+.group-feature {
+  max-width: 72rem;
+  margin: 2rem auto;
+  padding: clamp(1rem, 4vw, 3rem);
+  background: #111827;
+  color: #f8fafc;
+  border: 1px solid #475569;
+  border-radius: 1rem;
+  scroll-margin-top: 7rem;
+}
+.group-feature :is(h2,h3,p,li) { color: inherit; }
+.group-feature :is(ol,ul) { padding-inline-start: 1.5rem; }
+.group-feature li + li { margin-top: .55rem; }
+.group-feature a { display: inline-flex; align-items: center; min-height: 44px; color: #bfdbfe; text-decoration: underline; }
+.group-feature figure { margin: 1.5rem 0; padding: 1rem; border: 1px solid #64748b; border-radius: .75rem; background: #1e293b; }
+.group-feature figcaption { font-size: .9rem; color: #dbeafe; }
