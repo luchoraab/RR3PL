@@ -106,7 +106,7 @@
   const updateShifts = () => {
     if (!shift) return;
     const card = Array.from(track?.querySelectorAll('[data-car]') ?? []).find(item => item.dataset.car === vehicle?.value);
-    const offered = Array.from(card?.querySelectorAll('.rate small') ?? [], item => item.textContent.trim().toLowerCase());
+    const offered = Array.from(card?.querySelectorAll('.rate:has(strong) small') ?? [], item => item.textContent.trim().toLowerCase());
     for (const option of shift.options) {
       option.disabled = Boolean(card && option.value && !offered.includes(option.value.toLowerCase()));
     }

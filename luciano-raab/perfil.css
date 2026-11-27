@@ -140,3 +140,6 @@ footer a{display:inline-block;margin:20px 24px 0 0}
 }
 .gallery-filters button[aria-pressed="true"] { background: #d8e7ff; color: #111826; }
 .gallery-filters button:focus-visible { outline: 2px solid #d8e7ff; outline-offset: 2px; }
+
+.profile-jumps { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.25rem; }
+.profile-jumps a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: .8rem; border: 1px solid #606e83; border-radius: 2rem; }

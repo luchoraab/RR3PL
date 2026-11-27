@@ -8,7 +8,7 @@ const motion = matchMedia('(prefers-reduced-motion: reduce)');
 let slides = allSlides;
 let current = 0;
 let visible = false;
-let playing = !motion.matches;
+let playing = false;
 let timer;
 
 function show(index) {

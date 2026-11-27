@@ -33,3 +33,13 @@ body{background:radial-gradient(ellipse 55% 30% at 76% 8%,rgba(60,90,188,.16),tr
     -webkit-backdrop-filter: none;
   }
 }
+
+.d-hero { padding-top: clamp(7rem, 12vw, 9rem); }
+.d-hero h1 { max-width: 19ch; margin-inline: auto; font-size: clamp(2.35rem, 5.8vw, 5.4rem); }
+.d-hero .hero-summary { max-width: 55ch; }
+.d-contact { padding-block: clamp(3.5rem, 7vw, 6rem); }
+@media (max-width: 700px) {
+  .hero-device { height: auto; margin-block: 2rem 0; padding-bottom: 1.5rem; }
+  .hero-device .hero-mobile, .hero-device .ambient-ring { display: none; }
+  .hero-device .hero-browser { position: relative; inset: auto; width: 100%; transform: none; }
+}

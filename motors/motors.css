@@ -387,3 +387,8 @@
 .slide-arrow:disabled { opacity: .45; cursor: default; }
 .vehicle-body { display: flex; flex-direction: column; }
 .vehicle-body .vehicle-cta { margin-top: auto; }
+
+.rental-requirements { margin-block: 1.25rem; }
+.rental-requirements ul { padding-inline-start: 1.25rem; }
+.rental-requirements li + li { margin-top: .35rem; }
+.vehicle-body .rates { grid-template-columns: repeat(2, minmax(0, 1fr)); }

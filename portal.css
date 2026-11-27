@@ -419,3 +419,11 @@ html{scrollbar-gutter:stable}.team-person .profile-link{display:block}.profile-l
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 }
+
+/* Neutral surfaces let the three brands and their actions carry the hierarchy. */
+.choice-card { background: #171a21 !important; box-shadow: 0 10px 26px #0003; }
+.choice-card .logo-area { background: linear-gradient(145deg, #f5f6f8, #d8dce2); }
+.choice-card .logo-area img { width: auto; max-width: 96%; height: clamp(100px, 16vw, 178px); object-fit: contain; }
+.choice-bottom > div { display: grid; gap: .35rem; }
+.choice-action { color: #fff; font-size: .9rem; font-weight: 700; }
+.team-profile-action { display: block; margin-top: .25rem; font-size: .82rem; }
