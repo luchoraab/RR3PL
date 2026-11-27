@@ -1,9 +1,11 @@
 const gallery = document.querySelector('.gallery');
 const controls = document.querySelector('.gallery-controls');
-const slides = [...gallery.querySelectorAll('img, video')];
+const filters = document.querySelector('.gallery-filters');
+const allSlides = [...gallery.querySelectorAll('img, video')];
 const playback = controls.querySelector('.gallery-play');
 const counter = controls.querySelector('.gallery-count');
 const motion = matchMedia('(prefers-reduced-motion: reduce)');
+let slides = allSlides;
 let current = 0;
 let visible = false;
 let playing = !motion.matches;
@@ -36,6 +38,23 @@ slides.forEach(slide => slide.setAttribute('aria-hidden', 'true'));
 show(0);
 gallery.classList.add('carousel');
 controls.hidden = false;
+filters.hidden = false;
+
+filters.addEventListener('click', event => {
+  const button = event.target.closest('[data-filter]');
+  if (!button) return;
+  const filter = button.dataset.filter;
+  if (slides[current] instanceof HTMLVideoElement) slides[current].pause();
+  slides[current].classList.remove('current');
+  slides[current].setAttribute('aria-hidden', 'true');
+  slides = filter === 'all' ? allSlides : allSlides.filter(slide => slide.dataset.category === filter);
+  current = 0;
+  filters.querySelectorAll('button').forEach(option => {
+    option.setAttribute('aria-pressed', String(option === button));
+  });
+  show(0);
+  schedule();
+});
 
 controls.addEventListener('click', event => {
   const step = event.target.dataset.step;

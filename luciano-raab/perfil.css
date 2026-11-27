@@ -121,3 +121,22 @@ footer a{display:inline-block;margin:20px 24px 0 0}
     to { opacity: 0; visibility: hidden; }
   }
 }
+
+.gallery-filters:not([hidden]) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-top: 1.25rem;
+}
+.gallery-filters button {
+  border: 1px solid #606e83;
+  border-radius: 999px;
+  background: #202735;
+  color: inherit;
+  font: inherit;
+  min-height: 44px;
+  padding: .4rem 1rem;
+  cursor: pointer;
+}
+.gallery-filters button[aria-pressed="true"] { background: #d8e7ff; color: #111826; }
+.gallery-filters button:focus-visible { outline: 2px solid #d8e7ff; outline-offset: 2px; }
