@@ -63,8 +63,8 @@ h1, h2, h3, p { margin-top: 0; }
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,.16);
   background: linear-gradient(135deg, rgba(17,19,25,.54), rgba(8,9,11,.42));
-  -webkit-backdrop-filter: blur(28px) saturate(140%);
-  backdrop-filter: blur(28px) saturate(140%);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
+  backdrop-filter: blur(8px) saturate(140%);
   box-shadow: 0 18px 50px rgba(0,0,0,.20), inset 0 1px 0 rgba(255,255,255,.12);
   display: flex;
   align-items: center;
@@ -872,9 +872,9 @@ h1, h2, h3, p { margin-top: 0; }
 .solution-card:hover {transform:translateY(-5px); box-shadow:0 22px 50px rgba(13,17,24,.12);}
 .proof-row div,.process-grid article,.tracking-list article {transition:transform .3s ease;}
 .proof-row div:hover,.process-grid article:hover,.tracking-list article:hover {transform:translateY(-4px);}
-.map-card path,.tracking-map path {stroke-dasharray:13 13;animation:routeDash 18s linear infinite;}
+.map-card path,.tracking-map path {stroke-dasharray:13 13;animation:routeDash 18s linear 1;}
 @keyframes routeDash {to {stroke-dashoffset:-260;}}
-.pin,.dot {transform:translate(-50%,-50%);animation:dotPulse 3.6s ease-in-out infinite;}
+.pin,.dot {transform:translate(-50%,-50%);animation:dotPulse 3.6s ease-in-out 1;}
 @keyframes dotPulse {50%{transform:translate(-50%,-50%) scale(1.14);}}
 /* Puntos anclados a la curva SVG mediante viewBox compartido, independiente del tamaño */
 .map-card svg,.tracking-map svg {overflow:visible;}
@@ -890,8 +890,8 @@ h1, h2, h3, p { margin-top: 0; }
 .site-header {
   border: 1px solid rgba(255,255,255,.10);
   background: linear-gradient(135deg, rgba(18,20,24,.86), rgba(8,10,14,.82));
-  -webkit-backdrop-filter: blur(28px) saturate(145%);
-  backdrop-filter: blur(28px) saturate(145%);
+  -webkit-backdrop-filter: blur(8px) saturate(145%);
+  backdrop-filter: blur(8px) saturate(145%);
   box-shadow: 0 18px 55px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.08);
 }
 .site-header::before {
@@ -952,8 +952,8 @@ h1, h2, h3, p { margin-top: 0; }
    Solo navbar y restauración visual del logo anterior del footer. */
 .site-header {
   background: linear-gradient(125deg, rgba(11,12,16,.87),rgba(3,4,6,.91));
-  -webkit-backdrop-filter: blur(30px) saturate(135%);
-  backdrop-filter: blur(30px) saturate(135%);
+  -webkit-backdrop-filter: blur(8px) saturate(135%);
+  backdrop-filter: blur(8px) saturate(135%);
 }
 .brand {
   display: inline-flex;
@@ -997,8 +997,8 @@ h1, h2, h3, p { margin-top: 0; }
     border-radius: 28px;
     border: 1px solid rgba(255,255,255,.12);
     background: rgba(6,7,9,.94);
-    -webkit-backdrop-filter: blur(24px);
-    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
     box-shadow: 0 24px 60px rgba(0,0,0,.30);
   }
   .main-nav.open { display: flex; }
@@ -1029,7 +1029,7 @@ body::after {
   opacity: .75;
   pointer-events: none;
   z-index: -1;
-  animation: ambientFloat 18s ease-in-out infinite alternate;
+  animation: ambientFloat 18s ease-in-out 1 alternate;
 }
 
 .hero,
@@ -1059,7 +1059,7 @@ body::after {
   opacity: .08;
   mix-blend-mode: normal;
   pointer-events: none;
-  animation: honeycombDrift 32s linear infinite;
+  animation: honeycombDrift 32s linear 1;
 }
 
 .hero::after {
@@ -1076,7 +1076,7 @@ body::after {
   filter: blur(28px);
   opacity: .55;
   pointer-events: none;
-  animation: orbShift 15s ease-in-out infinite alternate;
+  animation: orbShift 15s ease-in-out 1 alternate;
 }
 
 .hero-grid,
@@ -1151,12 +1151,12 @@ body::after {
   filter: blur(28px);
   opacity: .22;
   transform: skewX(-18deg);
-  animation: panelSweep 10s ease-in-out infinite alternate;
+  animation: panelSweep 10s ease-in-out 1 alternate;
   pointer-events: none;
 }
 
 .route-marker {
-  animation: routeMarkerPulse 3.8s ease-in-out infinite;
+  animation: routeMarkerPulse 3.8s ease-in-out 1;
 }
 
 .solution-card {
@@ -1220,8 +1220,8 @@ body::after {
 .whatsapp-float {
   background: linear-gradient(180deg, rgba(18,20,24,.98), rgba(10,12,16,.96));
   border: 1px solid rgba(255,255,255,.08);
-  -webkit-backdrop-filter: blur(18px) saturate(130%);
-  backdrop-filter: blur(18px) saturate(130%);
+  -webkit-backdrop-filter: blur(8px) saturate(130%);
+  backdrop-filter: blur(8px) saturate(130%);
 }
 
 @keyframes ambientFloat {
@@ -1282,4 +1282,11 @@ body::after {
   .section { padding-block: 54px; }
   .hero-actions { gap: .65rem; }
   .hero-actions .button { max-width: 100%; white-space: normal; }
+}
+
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .site-header, .main-nav {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
 }

@@ -2,7 +2,7 @@
 *{box-sizing:border-box}body{margin:0;min-width:320px;min-height:100svh;overflow-x:hidden}a{text-decoration:none;color:inherit}img{display:block;max-width:100%}
 body{background:radial-gradient(ellipse 45% 55% at 14% 20%,#4f5f7942,transparent 75%),radial-gradient(ellipse 44% 58% at 88% 75%,#3763ae28,transparent 76%),linear-gradient(130deg,#11151c,#080a0e 58%,#10151e)}
 body::before{content:"";position:fixed;inset:0;background:linear-gradient(#ffffff06 1px,transparent 1px),linear-gradient(90deg,#ffffff06 1px,transparent 1px);background-size:80px 80px;mask-image:linear-gradient(180deg,transparent,#0008 35%,transparent 92%);pointer-events:none}
-.ambient{position:fixed;inset:-15%;pointer-events:none;background:radial-gradient(ellipse 22% 20% at 20% 42%,#ffffff19,transparent 80%),radial-gradient(ellipse 30% 20% at 79% 62%,#587db83b,transparent 80%);filter:blur(75px);animation:ambient 20s ease-in-out infinite alternate}
+.ambient{position:fixed;inset:-15%;pointer-events:none;background:radial-gradient(ellipse 22% 20% at 20% 42%,#ffffff19,transparent 80%),radial-gradient(ellipse 30% 20% at 79% 62%,#587db83b,transparent 80%);filter:blur(75px);animation:ambient 20s ease-in-out 1 alternate}
 .portal{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;min-height:100svh;width:min(1360px,calc(100% - 72px));margin:auto;padding:36px 0 25px}
 .portal-heading{text-align:center;margin:0 auto 38px;display:flex;flex-direction:column;align-items:center}
 .group-logo{width:clamp(230px,26vw,390px);max-height:105px;object-fit:contain;filter:drop-shadow(0 15px 25px #0009)}
@@ -39,7 +39,7 @@ body::before{content:"";position:fixed;inset:0;background:linear-gradient(#fffff
 .portal-heading{animation:entrance .72s both cubic-bezier(.18,.82,.25,1)}
 .group-logo{filter:drop-shadow(0 12px 28px rgba(0,0,0,.48)) drop-shadow(0 0 18px rgba(255,255,255,.07))}
 .portal-heading p{color:#d2d7e0}
-.choice-card{backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);background:linear-gradient(155deg,rgba(255,255,255,.96),rgba(229,234,241,.93));animation:card-rise .65s both cubic-bezier(.18,.82,.25,1)}
+.choice-card{backdrop-filter:blur(8px) saturate(1.2);-webkit-backdrop-filter:blur(8px) saturate(1.2);background:linear-gradient(155deg,rgba(255,255,255,.96),rgba(229,234,241,.93));animation:card-rise .65s both cubic-bezier(.18,.82,.25,1)}
 .choice-card:nth-child(1){animation-delay:.11s}
 .choice-card:nth-child(2){animation-delay:.20s}
 .choice-card:nth-child(3){animation-delay:.29s}
@@ -57,7 +57,7 @@ body::before{content:"";position:fixed;inset:0;background:linear-gradient(#fffff
 
 /* Portal Grupo RAAB · refinamiento fiel al original */
 body{background:radial-gradient(ellipse 46% 58% at 12% 15%,rgba(91,104,131,.34),transparent 76%),radial-gradient(ellipse 44% 50% at 88% 75%,rgba(47,85,156,.20),transparent 76%),linear-gradient(135deg,#0e1219,#080b11 60%,#0e1420)}
-.cursor-light{pointer-events:none;position:fixed;top:0;left:0;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(93,125,183,.13) 0%,rgba(93,125,183,.045) 31%,transparent 66%);filter:blur(8px);opacity:0;z-index:0;transition:opacity .45s ease;will-change:transform}
+.cursor-light{pointer-events:none;position:fixed;top:0;left:0;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(93,125,183,.13) 0%,rgba(93,125,183,.045) 31%,transparent 66%);filter:blur(8px);opacity:0;z-index:0;transition:opacity .45s ease;}
 .cursor-light.visible{opacity:1}
 .portal{z-index:2;width:min(1410px,calc(100% - 72px))}
 .portal-heading{margin-bottom:42px}
@@ -90,14 +90,14 @@ body{background:radial-gradient(ellipse 46% 58% at 12% 15%,rgba(91,104,131,.34),
 .rr-preintro body {overflow:hidden}
 
 
-.intro-skip {position:absolute;z-index:2;bottom:25px;right:clamp(15px,4vw,50px);padding:12px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.055);color:#ccd5e2;font:700 12px Roboto,Arial,sans-serif;letter-spacing:.04em;backdrop-filter:blur(16px);cursor:pointer}
+.intro-skip {position:absolute;z-index:2;bottom:25px;right:clamp(15px,4vw,50px);padding:12px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.055);color:#ccd5e2;font:700 12px Roboto,Arial,sans-serif;letter-spacing:.04em;backdrop-filter:blur(8px);cursor:pointer}
 .intro-skip:hover,.intro-skip:focus-visible {background:rgba(255,255,255,.15);color:white}
 .rr-intro-complete .intro-scene {display:flex;animation:rrIntroFade .7s both;pointer-events:none}
 .choice-card {transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .45s,border-color .45s,background .45s}
-.choice-card .logo-area img {will-change:transform;transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+.choice-card .logo-area img {transition:transform .55s cubic-bezier(.2,.8,.2,1)}
 .choice-card:focus-visible {outline:3px solid #a8c5ff}
 .choice-card:hover .logo-area img {transform:scale(1.055) translateY(-4px)}
-body::after {content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 120%,rgba(69,108,170,.12),transparent 54%);z-index:0;animation:rrBackdropBreathe 16s ease-in-out infinite alternate}
+body::after {content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 120%,rgba(69,108,170,.12),transparent 54%);z-index:0;animation:rrBackdropBreathe 16s ease-in-out 1 alternate}
 @keyframes rrIntroFade {from{opacity:1}to{opacity:0}}
 @keyframes rrBackdropBreathe {from{opacity:.5;transform:translateY(0)}to{opacity:1;transform:translateY(-2%)}}
 @media(max-width:520px){.intro-skip{bottom:20px;right:17px}}
@@ -106,12 +106,12 @@ body::after {content:"";position:fixed;inset:0;pointer-events:none;background:ra
 
 /* Grupo RAAB V6 · arquitectura visual premium y legibilidad de cada marca */
 .choice-card,.choice-card:hover{color:#f4f7ff}
-.choice-card{padding:22px;min-height:440px;border:1px solid rgba(208,224,255,.22);background:linear-gradient(140deg,rgba(33,40,55,.90),rgba(12,18,30,.91))!important;backdrop-filter:blur(24px) saturate(120%);-webkit-backdrop-filter:blur(24px) saturate(120%);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 32px 74px rgba(0,0,0,.38)}
+.choice-card{padding:22px;min-height:440px;border:1px solid rgba(208,224,255,.22);background:linear-gradient(140deg,rgba(33,40,55,.90),rgba(12,18,30,.91))!important;backdrop-filter:blur(8px) saturate(120%);-webkit-backdrop-filter:blur(8px) saturate(120%);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 32px 74px rgba(0,0,0,.38)}
 .choice-card::before{background:radial-gradient(ellipse 85% 75% at var(--mx,50%) var(--my,15%),rgba(126,164,245,.23),transparent 77%)!important;opacity:1}
 .choice-card::after{background:linear-gradient(90deg,transparent,rgba(194,220,255,.17),transparent);filter:blur(18px)}
 .choice-card:hover{border-color:rgba(197,220,255,.59);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 35px 82px rgba(0,0,0,.52),0 0 42px rgba(50,95,195,.09)}
 .choice-number{color:#b8c4d6;font-size:.68rem}
-.logo-area{position:relative;border:1px solid rgba(246,250,255,.5);border-radius:22px;margin:19px 0 21px;padding:16px 17px;min-height:242px;background:linear-gradient(135deg,rgba(255,255,255,.94),rgba(217,225,239,.88));box-shadow:0 22px 44px rgba(0,0,0,.20),inset 0 1px 0 #fff;overflow:hidden;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+.logo-area{position:relative;border:1px solid rgba(246,250,255,.5);border-radius:22px;margin:19px 0 21px;padding:16px 17px;min-height:242px;background:linear-gradient(135deg,rgba(255,255,255,.94),rgba(217,225,239,.88));box-shadow:0 22px 44px rgba(0,0,0,.20),inset 0 1px 0 #fff;overflow:hidden;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .logo-area:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 52% 0%,rgba(255,255,255,.94),transparent 75%);pointer-events:none}
 .logo-area::after{opacity:.18;filter:blur(28px)}
 .logo-area img{position:relative;z-index:2;max-height:205px;filter:drop-shadow(0 18px 14px rgba(26,37,59,.15))}
@@ -199,7 +199,7 @@ body::after {content:"";position:fixed;inset:0;pointer-events:none;background:ra
 /* Retratos completos y fondo de vidrio esmerilado. */
 .portal-team {
   background: radial-gradient(ellipse at 50% 0%, #6389c64d, transparent 72%), #131b29c9;
-  backdrop-filter: blur(22px);
+  backdrop-filter: blur(8px);
 }
 
 .team-person {
@@ -411,4 +411,11 @@ html{scrollbar-gutter:stable}.team-person .profile-link{display:block}.profile-l
   .choice-bottom, .choice-bottom > div, .team-person { min-width: 0; }
   .choice-bottom :is(h2,p), .team-person figcaption { overflow-wrap: anywhere; }
   .portal-careers { margin-top: 1.25rem; }
+}
+
+/* The gradients retain their appearance without animated full-screen layers. */
+.ambient, body::after { animation: none; }
+.choice-card, .choice-card .logo-area {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
