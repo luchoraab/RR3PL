@@ -83,3 +83,41 @@ footer a{display:inline-block;margin:20px 24px 0 0}
 .gallery.carousel :is(img, video) { pointer-events: none; }
 .gallery.carousel .current { pointer-events: auto; }
 .gallery.carousel video:not(.current) { visibility: hidden; }
+
+.profile-intro { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .show-profile-intro .profile-intro {
+    display: grid;
+    place-items: center;
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, #272a2e, #08090b 75%);
+    animation: profile-intro-exit .45s 1.65s ease-in both;
+  }
+  .profile-intro-logo {
+    position: relative;
+    width: min(760px, 90vw, 132vh);
+    aspect-ratio: 3 / 2;
+  }
+  .profile-intro-logo span {
+    position: absolute;
+    inset: 0;
+    background: url('logo-lr.webp') center / contain no-repeat;
+    animation: profile-logo-arrive .55s ease-out both;
+  }
+  .profile-intro-mark { clip-path: inset(0 0 24%); }
+  .profile-intro-logo .profile-intro-name {
+    clip-path: inset(76% 0 0);
+    animation-delay: .55s;
+  }
+  @keyframes profile-logo-arrive {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes profile-intro-exit {
+    from { opacity: 1; visibility: visible; }
+    to { opacity: 0; visibility: hidden; }
+  }
+}
