@@ -339,9 +339,47 @@ body::after {content:"";position:fixed;inset:0;pointer-events:none;background:ra
 }
 html{scrollbar-gutter:stable}.team-person .profile-link{display:block}.profile-link:focus-visible{outline:3px solid white;outline-offset:-4px}
 
-.intro-signature{display:block;width:min(660px,82vw);height:auto}
-.intro-scene{background:radial-gradient(ellipse at center,#253149 0%,#0b1019 52%,#07090e 100%)}
-@media(prefers-reduced-motion:no-preference){
-  .intro-signature{animation:signature-arrives .9s cubic-bezier(.2,.7,.2,1) both}
-  @keyframes signature-arrives{from{opacity:0;transform:translateY(8px) scale(.975)}to{opacity:1;transform:none}}
+.intro-signature {
+  display: grid;
+  justify-items: center;
+  gap: clamp(10px, 3vw, 22px);
+  width: min(480px, 78vw);
+}
+.intro-mark { width: 80%; height: auto; }
+.intro-lockup {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 780 / 104;
+  overflow: hidden;
+}
+.intro-lockup img {
+  position: absolute;
+  right: 0;
+  top: -126.92%;
+  width: 162.56%;
+  max-width: none;
+  height: auto;
+}
+.intro-lockup::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 36%, #e2efff85 50%, transparent 64%);
+  mask: url("assets/grupo-raab-logo.png") right 46% / 162.56% auto no-repeat;
+  background-size: 260% 100%;
+  animation: intro-sheen .85s 1.15s ease both;
+}
+.intro-scene { background: radial-gradient(ellipse at center, #253149, #0b1019 52%, #07090e); }
+@media (prefers-reduced-motion: no-preference) {
+  .intro-mark { animation: intro-arrival .75s ease-out both; }
+  .intro-lockup { animation: intro-arrival .65s .58s ease-out both; }
+}
+@keyframes intro-arrival {
+  from { opacity: 0; transform: translateY(12px) scale(.96); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes intro-sheen {
+  0% { opacity: 0; background-position: 100% 0; }
+  40% { opacity: 1; }
+  100% { opacity: 0; background-position: 0 0; }
 }

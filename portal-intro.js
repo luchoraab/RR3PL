@@ -12,7 +12,7 @@
   clearTimeout(window.rrIntroFallback);
   portal.inert = true;
   skip.focus({ preventScroll: true });
-  const timer = setTimeout(finish, 1900);
+  const timer = setTimeout(finish, 2350);
   skip.addEventListener('click', finish, { once: true });
   document.addEventListener('keydown', onKey);
   motion.addEventListener('change', finish, { once: true });
