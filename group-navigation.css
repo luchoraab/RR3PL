@@ -1,22 +1,3 @@
-.group-navigation {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: .4rem 1rem;
-  padding: .4rem max(1rem, calc((100% - 72rem) / 2));
-  background: #111827;
-  color: #f8fafc;
-  font: 500 .875rem/1.4 system-ui, sans-serif;
-}
-.group-navigation a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  color: inherit;
-  padding-inline: .35rem;
-}
-.group-navigation a[aria-current] { text-decoration: underline; text-underline-offset: .3em; }
-.group-navigation a:focus-visible { outline: 2px solid white; outline-offset: 2px; }
 .group-feature {
   max-width: 72rem;
   margin: 2rem auto;
