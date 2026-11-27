@@ -21,7 +21,11 @@ p{color:#ccd1da}
 article+article{margin-top:30px}
 .media,footer{padding:45px 0}
 .gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:26px}
-.gallery>*{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:14px}
+.gallery>*{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:14px}
 footer a{display:inline-block;margin:20px 24px 0 0}
-@media(max-width:650px){.hero,.chapter{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.gallery video{grid-column:1/-1;max-height:65vh;object-fit:contain;background:#090b10}.portrait{max-height:460px;object-fit:contain}}
+@media(max-width:650px){.hero,.chapter{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.gallery img:last-child{grid-column:1/-1}.portrait{max-height:460px;object-fit:contain}}
 @media(prefers-reduced-motion:no-preference){.hero>div,.portrait{animation:appear .65s ease-out both}@keyframes appear{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}}
+
+.gallery img:last-child{aspect-ratio:1;object-fit:contain;background:#050609}
+.career article{border-left:2px solid #778ba8;padding-left:1.25rem}
+.career article p{margin-bottom:0}

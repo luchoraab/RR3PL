@@ -9,6 +9,7 @@
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://rr-raab.com/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="assets/grupo-raab-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -29,16 +30,7 @@
 </head>
 <body>
   <div class="intro-scene" id="introScene" aria-label="Presentación de Grupo RAAB">
-    <div class="intro-lights" aria-hidden="true"></div>
-    <div class="intro-center">
-      <img src="assets/rr-monograma-intro.png" class="intro-monogram intro-monogram--flat" alt="RR">
-      <div class="intro-rule" aria-hidden="true"></div>
-      <div class="intro-brand">
-        <div class="intro-wordmark">
-          <img src="assets/grupo-raab-logo.png" alt="Grupo RAAB" width="1268" height="390">
-        </div>
-      </div>
-    </div>
+    <img class="intro-signature" src="assets/grupo-raab-logo.png" width="1268" height="390" alt="Grupo RAAB" fetchpriority="high">
     <button class="intro-skip" type="button" id="introSkip">Omitir animación</button>
   </div>
   <div class="ambient" aria-hidden="true"></div><div class="cursor-light" aria-hidden="true"></div>

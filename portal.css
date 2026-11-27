@@ -90,11 +90,6 @@ body{background:radial-gradient(ellipse 46% 58% at 12% 15%,rgba(91,104,131,.34),
 .rr-preintro body {overflow:hidden}
 
 
-.intro-lights {position:absolute;inset:-30%;background:radial-gradient(circle at 30% 42%,rgba(255,255,255,.15),transparent 25%),radial-gradient(circle at 72% 46%,rgba(36,91,174,.27),transparent 32%);filter:blur(55px);animation:introPulse 4s ease-in-out infinite alternate}
-.intro-center {z-index:1;display:flex;flex-direction:column;align-items:center;gap:18px;width:min(520px,78vw);transform:translateY(-12px)}
-.intro-monogram {width:min(360px,64vw);height:auto;max-height:235px;object-fit:contain;filter:drop-shadow(0 16px 50px rgba(255,255,255,.17));animation:rrMonogramIn 900ms cubic-bezier(.18,.82,.25,1) both}
-.intro-rule {width:0;height:1px;background:linear-gradient(90deg,transparent,#e0e8f5,transparent);animation:rrIntroLine 650ms .8s both}
-.intro-brand {font-size:clamp(23px,5vw,47px);font-weight:900;letter-spacing:.27em;text-align:center;color:#f2f5fa;line-height:1.15;opacity:0;animation:rrIntroName 800ms 1.2s both;text-shadow:0 9px 35px rgba(255,255,255,.12)}
 .intro-skip {position:absolute;z-index:2;bottom:25px;right:clamp(15px,4vw,50px);padding:12px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.055);color:#ccd5e2;font:700 12px Roboto,Arial,sans-serif;letter-spacing:.04em;backdrop-filter:blur(16px);cursor:pointer}
 .intro-skip:hover,.intro-skip:focus-visible {background:rgba(255,255,255,.15);color:white}
 .rr-intro-complete .intro-scene {display:flex;animation:rrIntroFade .7s both;pointer-events:none}
@@ -103,23 +98,11 @@ body{background:radial-gradient(ellipse 46% 58% at 12% 15%,rgba(91,104,131,.34),
 .choice-card:focus-visible {outline:3px solid #a8c5ff}
 .choice-card:hover .logo-area img {transform:scale(1.055) translateY(-4px)}
 body::after {content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 120%,rgba(69,108,170,.12),transparent 54%);z-index:0;animation:rrBackdropBreathe 16s ease-in-out infinite alternate}
-@keyframes rrMonogramIn {0%{opacity:0;filter:blur(18px);transform:scale(.8) translateY(30px)}100%{opacity:1;filter:blur(0) drop-shadow(0 16px 50px rgba(255,255,255,.17));transform:scale(1) translateY(0)}}
-@keyframes rrIntroLine {from{width:0;opacity:0}to{width:min(410px,70vw);opacity:1}}
-@keyframes rrIntroName {from{opacity:0;filter:blur(10px);transform:translateY(10px)}to{opacity:1;filter:blur(0);transform:translateY(0)}}
 @keyframes rrIntroFade {from{opacity:1}to{opacity:0}}
-@keyframes rrLandingIn {from{opacity:0;filter:blur(11px);transform:translateY(18px)}to{opacity:1;filter:blur(0);transform:translateY(0)}}
 @keyframes rrBackdropBreathe {from{opacity:.5;transform:translateY(0)}to{opacity:1;transform:translateY(-2%)}}
-@keyframes introPulse {from{transform:translateX(-2%) scale(1);opacity:.55}to{transform:translateX(3%) scale(1.04);opacity:1}}
-@media(max-width:520px){.intro-center{gap:13px}.intro-brand{letter-spacing:.14em}.intro-skip{bottom:20px;right:17px}}
+@media(max-width:520px){.intro-skip{bottom:20px;right:17px}}
 @media(prefers-reduced-motion:reduce){.intro-scene {display:none!important}.rr-preintro .portal{opacity:1!important;transform:none!important}.rr-intro-complete .portal{animation:none!important}body::after{animation:none}}
 
-
-/* V5 · intro logo exacto del monograma enviado por el usuario */
-.intro-monogram--flat{
-  width:min(440px,72vw);
-  max-height:255px;
-  filter:drop-shadow(0 18px 42px rgba(255,255,255,.08)) drop-shadow(0 10px 28px rgba(0,0,0,.42));
-}
 
 /* Grupo RAAB V6 · arquitectura visual premium y legibilidad de cada marca */
 .choice-card,.choice-card:hover{color:#f4f7ff}
@@ -334,27 +317,6 @@ body::after {content:"";position:fixed;inset:0;pointer-events:none;background:ra
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .intro-center { isolation: isolate; }
-  .intro-center::before {
-    content: "";
-    position: absolute;
-    inset: -35% -35%;
-    z-index: -1;
-    pointer-events: none;
-    background: radial-gradient(ellipse, #729ee962, #416bb324 35%, transparent 67%);
-    animation: intro-halo-arrival 2.8s both ease-out;
-  }
-
-  .intro-center::after {
-    content: "";
-    position: absolute;
-    inset: -12% -28% 4%;
-    z-index: -1;
-    pointer-events: none;
-    background: linear-gradient(115deg, transparent 43%, #a7c8ff3b 50%, transparent 57%);
-    animation: intro-reflection 1.6s .45s both ease-out;
-  }
-
   .choice-card .logo-area { overflow: hidden; }
   .choice-card .logo-area::before {
     content: "";
@@ -369,80 +331,17 @@ body::after {content:"";position:fixed;inset:0;pointer-events:none;background:ra
     animation: choice-reflection 850ms ease-out both;
   }
 
-  html:not(.rr-preintro) .portal-heading .group-logo { animation: portal-logo-light 1.8s .1s both ease-out; }
+
 }
 
-@keyframes intro-halo-arrival {
-  0% { opacity: 0; transform: scale(.65); }
-  55% { opacity: 1; }
-  100% { opacity: .55; transform: scale(1.15); }
-}
-@keyframes intro-reflection {
-  0% { opacity: 0; transform: translateX(-36%); }
-  38% { opacity: 1; }
-  100% { opacity: 0; transform: translateX(36%); }
-}
 @keyframes choice-reflection {
   to { transform: translateX(110%); }
 }
-@keyframes portal-logo-light {
-  0% { filter: drop-shadow(0 0 0 #9bc4ff00); }
-  45% { filter: drop-shadow(0 0 26px #9bc4ff66); }
-  100% { filter: drop-shadow(0 0 20px #9bc4ff24); }
-}
-
-/* Show the exact lettering from the supplied logo below the monogram. */
-.intro-brand { width: min(100%, 470px); }
-
-.intro-wordmark {
-  position: relative;
-  aspect-ratio: 780 / 104;
-  overflow: hidden;
-  isolation: isolate;
-}
-
-.intro-wordmark img {
-  position: absolute;
-  right: 0;
-  top: -126.92%;
-  width: 162.56%;
-  max-width: none;
-  height: auto;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .intro-wordmark::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(110deg, transparent 39%, #e2efffbc 50%, transparent 61%);
-    background-size: 230% 100%;
-    mask: url("assets/grupo-raab-logo.png") right 46% / 162.56% auto no-repeat;
-    mix-blend-mode: screen;
-    animation: intro-wordmark-sheen 880ms 1.75s ease both;
-    pointer-events: none;
-  }
-
-  .intro-scene::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 50% 52%, #89aef145, transparent 59%);
-    animation: intro-stage-light 2.9s ease-out both;
-    pointer-events: none;
-  }
-}
-
-@keyframes intro-wordmark-sheen {
-  0% { background-position: 100% 0; opacity: 0; }
-  25%, 68% { opacity: 1; }
-  100% { background-position: 0 0; opacity: 0; }
-}
-
-@keyframes intro-stage-light {
-  0% { opacity: 0; transform: scale(.8); }
-  57% { opacity: 1; }
-  100% { opacity: .36; transform: scale(1.18); }
-}
-
 html{scrollbar-gutter:stable}.team-person .profile-link{display:block}.profile-link:focus-visible{outline:3px solid white;outline-offset:-4px}
+
+.intro-signature{display:block;width:min(660px,82vw);height:auto}
+.intro-scene{background:radial-gradient(ellipse at center,#253149 0%,#0b1019 52%,#07090e 100%)}
+@media(prefers-reduced-motion:no-preference){
+  .intro-signature{animation:signature-arrives .9s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes signature-arrives{from{opacity:0;transform:translateY(8px) scale(.975)}to{opacity:1;transform:none}}
+}
