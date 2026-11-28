@@ -296,24 +296,6 @@ body::after {content:"";position:fixed;inset:0;pointer-events:none;background:ra
   container-type: inline-size;
 }
 
-.logistics-emblem {
-  aspect-ratio: 996 / 425;
-  overflow: hidden;
-}
-
-.logistica .logistics-emblem img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: none;
-  filter: none;
-}
-
-.logistica .logistics-emblem img,
-.logistica:hover .logistics-emblem img {
-  transform: none;
-}
-
 .logistics-lockup span {
   display: block;
   color: #141a22;
@@ -452,3 +434,13 @@ html{scrollbar-gutter:stable}.team-person .profile-link{display:block}.profile-l
 }
 
 .portal-title { margin: .4rem 0 .25rem; font-size: clamp(1.4rem, 4vw, 2.1rem); }
+
+.choice-card .logistics-lockup .logistics-emblem {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  filter: none;
+  transform: none;
+}
