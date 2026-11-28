@@ -147,6 +147,7 @@ body::after {content:"";position:fixed;inset:0;pointer-events:none;background:ra
 .team-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 1.23fr) repeat(3, minmax(0, 1fr));
+  grid-template-areas: "kevin celeste rocio luciano dylan zacarias franco";
   align-items: end;
   gap: clamp(6px, 1.2vw, 16px);
 }
@@ -251,7 +252,6 @@ body::after {content:"";position:fixed;inset:0;pointer-events:none;background:ra
   .team-person img { display: block; aspect-ratio: 1; object-position: var(--portrait-position, center top); }
   .team-person figcaption { flex: 1; min-height: 65px; padding: 10px 5px; }
   .team-person--luciano {
-    grid-area: luciano;
     display: grid;
     grid-template-columns: minmax(0, 45%) minmax(0, 1fr);
     align-items: stretch;
@@ -259,12 +259,6 @@ body::after {content:"";position:fixed;inset:0;pointer-events:none;background:ra
   .team-person--luciano .profile-link { align-self: center; }
   .team-person--luciano figcaption { text-align: left; padding: 16px; }
   .team-person--luciano strong { font-size: clamp(1.05rem, 4vw, 1.65rem); }
-  .team-person--rocio { grid-area: rocio; }
-  .team-person--dylan { grid-area: dylan; }
-  .team-person--celeste { grid-area: celeste; }
-  .team-person--zacarias { grid-area: zacarias; }
-  .team-person--kevin { grid-area: kevin; }
-  .team-person--franco { grid-area: franco; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -443,4 +437,18 @@ html{scrollbar-gutter:stable}.team-person .profile-link{display:block}.profile-l
   max-height: none;
   filter: none;
   transform: none;
+}
+
+.team-person--luciano { grid-area: luciano; }
+.team-person--dylan { grid-area: dylan; }
+.team-person--zacarias { grid-area: zacarias; }
+.team-person--franco { grid-area: franco; }
+.team-person--kevin { grid-area: kevin; }
+.team-person--rocio { grid-area: rocio; }
+.team-person--celeste { grid-area: celeste; }
+
+@media (max-width: 940px) {
+  .choice-card { grid-template-rows: 1fr; }
+  .choice-card .logo-area,
+  .choice-card .choice-bottom { grid-row: 1; }
 }

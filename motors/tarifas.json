@@ -1,0 +1,110 @@
+[
+  {
+    "id": "auto-1",
+    "name": "Volkswagen Gol Power",
+    "rates": {
+      "12": [
+        45000
+      ],
+      "24": [
+        70000,
+        75000
+      ]
+    }
+  },
+  {
+    "id": "auto-2",
+    "name": "Fiat Idea",
+    "rates": {
+      "12": [
+        50000
+      ],
+      "24": [
+        75000,
+        80000
+      ]
+    }
+  },
+  {
+    "id": "auto-3",
+    "name": "Fiat Palio Fire",
+    "rates": {
+      "12": [
+        50000
+      ],
+      "24": [
+        75000,
+        80000
+      ]
+    }
+  },
+  {
+    "id": "auto-4",
+    "name": "Chevrolet Prisma Joy",
+    "rates": {
+      "12": [
+        60000
+      ],
+      "24": []
+    }
+  },
+  {
+    "id": "auto-5",
+    "name": "Chevrolet Prisma LTZ",
+    "rates": {
+      "12": [
+        55000,
+        60000
+      ],
+      "24": []
+    }
+  },
+  {
+    "id": "auto-6",
+    "name": "Fiat Cronos",
+    "rates": {
+      "12": [
+        60000
+      ],
+      "24": [
+        90000,
+        95000
+      ]
+    }
+  },
+  {
+    "id": "auto-7",
+    "name": "Fiat Siena",
+    "rates": {
+      "12": [
+        55000
+      ],
+      "24": [
+        75000,
+        80000
+      ]
+    }
+  },
+  {
+    "id": "auto-8",
+    "name": "Fiat Idea Adventure",
+    "rates": {
+      "12": [
+        55000
+      ],
+      "24": []
+    }
+  },
+  {
+    "id": "auto-9",
+    "name": "Nissan Versa",
+    "rates": {
+      "12": [
+        60000
+      ],
+      "24": [
+        90000
+      ]
+    }
+  }
+]

@@ -4,10 +4,13 @@
   const dialogs = new Map();
   const triggers = new WeakMap();
   function mount(form) {
-    form.hidden = false;
-    if (!supportsDialog) return;
+    if (!supportsDialog) {
+      form.hidden = false;
+      return;
+    }
     const section = form.closest('section[id]');
     if (!section) return;
+    form.hidden = false;
 
     const dialog = document.createElement('dialog');
     dialog.className = 'consultation-dialog';
@@ -44,6 +47,7 @@
       (trigger?.getClientRects().length ? trigger : opener).focus({ preventScroll: true });
     });
     document.body.append(dialog);
+    section.querySelector('.consultation-fallback')?.setAttribute('hidden', '');
     section.firstElementChild?.classList.add('consultation-layout');
     dialogs.set('#' + section.id, dialog);
     for (const link of document.querySelectorAll('a[href="#' + section.id + '"]')) {

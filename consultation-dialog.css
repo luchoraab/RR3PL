@@ -85,3 +85,5 @@ form[data-dialog-title][hidden] { display: none !important; }
   outline-offset: 3px;
 }
 main :where(section[id], article[id]) { scroll-margin-block-start: var(--header-clearance); }
+
+.consultation-fallback[hidden] { display: none; }

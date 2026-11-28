@@ -109,6 +109,28 @@
   const rentalFields = form?.querySelectorAll('[data-rental]') ?? [];
   const detail = form?.elements.namedItem('mensaje');
 
+  const date = form?.elements.namedItem('fecha');
+  const estimate = document.querySelector('#rental-estimate');
+  const money = new Intl.NumberFormat('es-AR', {style: 'currency', currency: 'ARS', maximumFractionDigits: 0});
+
+  function rentalPrice() {
+    if (reason?.value !== 'Alquiler de vehículo' || !date?.valueAsDate || !shift?.value) return null;
+    const card = Array.from(track.querySelectorAll('[data-car]')).find(item => item.dataset.car === vehicle.value);
+    const rate = Array.from(card?.querySelectorAll('[data-turn]') ?? []).find(item => item.dataset.turn === shift.value);
+    const prices = rate?.dataset.prices?.split(',').filter(Boolean).map(Number) ?? [];
+    const weekday = date.valueAsDate.getUTCDay();
+    return prices[prices.length === 2 && (weekday === 0 || weekday >= 5) ? 1 : 0] ?? null;
+  }
+
+  function updateEstimate() {
+    const price = rentalPrice();
+    estimate.textContent = price === null ? '' : `Tarifa orientativa: ${money.format(price)}. Disponibilidad a confirmar.`;
+    estimate.hidden = price === null;
+  }
+
+  form?.addEventListener('change', updateEstimate);
+  form?.addEventListener('input', updateEstimate);
+
   const updateFields = () => {
     const rental = reason?.value === 'Alquiler de vehículo';
     rentalFields.forEach(label => {
@@ -131,6 +153,7 @@
     if (reason) reason.value = 'Alquiler de vehículo';
     if (shift) shift.value = selectedTurn();
     updateFields();
+    updateEstimate();
     if (form && !form.closest('dialog')) form.scrollIntoView({behavior: 'smooth', block: 'center'});
   }));
   window.RRConsultation?.bind(form, data => {
@@ -144,6 +167,8 @@
       const value = String(data.get(field) || '').trim();
       if (value) lines.push(`${label}: ${value}`);
     }
+    const price = rentalPrice();
+    if (price !== null) lines.push(`Tarifa orientativa: ${money.format(price)} (disponibilidad a confirmar)`);
     window.RRConsultation.whatsapp(lines);
   });
 })();

@@ -81,7 +81,7 @@
         <div class="hero-panel">
           <div class="panel-head">
             <span>Vista ilustrativa de gestión</span>
-            <strong>Hoy</strong>
+
           </div>
 
           <div class="order-card active">
@@ -92,8 +92,7 @@
 
           <div class="map-card">
             <div class="map-toolbar">
-              <span>Seguimiento activo</span>
-              <b>En curso</b>
+              <span>Recorrido ilustrativo</span>
             </div>
             <svg viewBox="0 0 500 230" preserveAspectRatio="none" aria-hidden="true">
               <path id="heroRoute" d="M40 172 C110 55, 195 170, 250 112 S390 50, 455 160" />
@@ -104,9 +103,9 @@
           </div>
 
           <div class="mini-metrics">
-            <article><strong>01</strong><span>Pedido</span></article>
-            <article><strong>02</strong><span>Ruta</span></article>
-            <article><strong>03</strong><span>Cierre</span></article>
+            <article><strong>01</strong><span>Recibimos el pedido</span></article>
+            <article><strong>02</strong><span>Coordinamos la entrega</span></article>
+            <article><strong>03</strong><span>Registramos el comprobante</span></article>
           </div>
         </div>
       </div>
@@ -283,7 +282,8 @@
           </div>
         </div>
 
-        <form class="form-card" id="quoteForm" data-dialog-title="Cotizar un envío" hidden method="post">
+        <a class="consultation-fallback consultation-open" href="https://wa.me/5493517059319?text=Hola%2C%20quiero%20cotizar%20un%20env%C3%ADo.">Cotizar un envío por WhatsApp</a>
+    <form class="form-card" id="quoteForm" data-dialog-title="Cotizar un envío" hidden method="post">
           <label>
             Nombre / Empresa
             <input type="text" name="empresa" placeholder="Ej: Dermocosmética Córdoba" required />
@@ -326,7 +326,8 @@
         </div>
 
         <a href="https://wa.me/5493517059319?text=Hola%2C%20quiero%20postularme%20como%20cadete.">Postularme por WhatsApp</a>
-        <form class="form-card" id="workForm" data-dialog-title="Postularme como cadete" hidden method="post">
+        <a class="consultation-fallback consultation-open" href="https://wa.me/5493517059319?text=Hola%2C%20quiero%20postularme%20como%20cadete.">Postularme como cadete por WhatsApp</a>
+    <form class="form-card" id="workForm" data-dialog-title="Postularme como cadete" hidden method="post">
           <label>
             Nombre y apellido
             <input type="text" name="nombre" placeholder="Tu nombre completo" required />

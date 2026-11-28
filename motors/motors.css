@@ -502,3 +502,10 @@
   .vehicle-track { gap: 12px; }
   .vehicle-card { flex-basis: calc(100% - 30px); }
 }
+
+#rental-estimate:not([hidden]) {
+  display: block;
+  margin-block: 12px;
+  color: #173b72;
+  font-weight: 700;
+}

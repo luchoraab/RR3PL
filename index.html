@@ -9,7 +9,6 @@
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://rr-raab.com/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" as="image" href="assets/grupo-raab-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -26,7 +25,7 @@
   <meta property="og:site_name" content="Grupo RAAB"><meta property="og:title" content="Grupo RAAB en Córdoba | Alquiler de autos, logística y software">
   <meta property="og:description" content="RR Motors · RR Third-Party Logistics · RR Digital Solutions">
   <meta property="og:url" content="https://rr-raab.com/"><meta property="og:image" content="https://rr-raab.com/assets/grupo-raab-logo.png">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Grupo RAAB","url":"https://rr-raab.com/","logo":"https://rr-raab.com/assets/grupo-raab-logo.png","subOrganization":[{"@type":"Organization","name":"RR Motors","url":"https://rr-raab.com/motors/"},{"@type":"Organization","name":"RR Third-Party Logistics","url":"https://rr-raab.com/logistica/"},{"@type":"Organization","name":"RR Digital Solutions","url":"https://rr-raab.com/digital/"}],"@id":"https://rr-raab.com/#organizacion"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://rr-raab.com/#organizacion","name":"Grupo RAAB","url":"https://rr-raab.com/","logo":"https://rr-raab.com/assets/grupo-raab-logo.png","subOrganization":[{"@type":"Organization","@id":"https://rr-raab.com/#organizacion","name":"RR Motors","url":"https://rr-raab.com/motors/"},{"@type":"Organization","@id":"https://rr-raab.com/#organizacion","name":"RR Third-Party Logistics","url":"https://rr-raab.com/logistica/"},{"@type":"Organization","@id":"https://rr-raab.com/#organizacion","name":"RR Digital Solutions","url":"https://rr-raab.com/digital/"}],"@id":"https://rr-raab.com/#organizacion"}</script>
   <link rel="stylesheet" href="consultation-dialog.css">
   <script src="consultation-submit.js" defer></script>
   <script src="consultation-dialog.js" defer></script>
@@ -50,12 +49,12 @@
     </div>
     <nav class="choices" aria-label="Unidades de negocio de Grupo RAAB">
       <a class="choice-card motors" href="motors/" aria-label="Entrar al sitio de RR Motors">
-        <span class="choice-number">01 / MOVILIDAD</span>
+
         <div class="logo-area"><img src="assets/rr-motors-transparent.png" alt="RR Motors"></div>
         <div class="choice-bottom"><div><h2>RR MOTORS</h2><p>Consultá autos, precios por turno y servicios de taller</p><span class="choice-action">Ver autos y precios →</span></div></div>
       </a>
       <a class="choice-card logistica" href="logistica/" aria-label="Entrar al sitio de RR Third-Party Logistics">
-        <span class="choice-number">02 / LOGÍSTICA</span>
+
         <div class="logo-area">
           <div class="logistics-lockup" aria-hidden="true">
             <img class="logistics-emblem" src="assets/rr-3pl-emblema.webp" width="996" height="425" alt="">
@@ -65,7 +64,7 @@
         <div class="choice-bottom"><div><h2>RR 3PL</h2><p>Cotizá retiros, entregas y devoluciones en Córdoba</p><span class="choice-action">Cotizar un envío →</span></div></div>
       </a>
       <a class="choice-card digital" href="digital/" aria-label="Entrar al sitio de RR Digital Solutions">
-        <span class="choice-number">03 / TECNOLOGÍA</span>
+
         <div class="logo-area"><img src="assets/rr-digital-transparent.webp" width="720" height="464" alt="RR Digital Solutions"></div>
         <div class="choice-bottom"><div><h2>RR DIGITAL SOLUTIONS</h2><p>Explorá sitios y aplicaciones para tu negocio</p><span class="choice-action">Explorar servicios digitales →</span></div></div>
       </a>
@@ -73,18 +72,6 @@
     <section class="portal-team" aria-labelledby="team-title">
       <h2 id="team-title">Nuestro equipo</h2>
       <div class="team-grid">
-        <figure class="team-person team-person--kevin" style="--step:6">
-          <img src="assets/equipo/kevin.webp" width="423" height="760" loading="lazy" alt="Kevin Valdés, supervisor de Grupo RAAB" decoding="async">
-          <figcaption><strong>Kevin Valdés</strong><span>Supervisor</span></figcaption>
-        </figure>
-        <figure class="team-person team-person--celeste" style="--step:4">
-          <img src="assets/equipo/celeste.webp" width="407" height="760" loading="lazy" alt="Celeste Aranda, administración de Grupo RAAB" decoding="async">
-          <figcaption><strong>Celeste Aranda</strong><span>Administración</span></figcaption>
-        </figure>
-        <figure class="team-person team-person--rocio" style="--step:2">
-          <img src="assets/equipo/rocio.webp" width="570" height="760" loading="lazy" alt="Rocío Salinas, administración de Grupo RAAB" decoding="async">
-          <figcaption><strong>Rocío Salinas</strong><span>Administración</span></figcaption>
-        </figure>
         <figure class="team-person team-person--luciano" style="--step:0">
           <a class="profile-link" href="luciano-raab/?intro=lr" aria-label="Conocer a Luciano Raab, fundador y presidente de Grupo RAAB"><img src="assets/equipo/luciano.webp" width="620" height="592" loading="lazy" alt="Luciano Raab, presidente de Grupo RAAB" decoding="async"></a>
           <figcaption><strong><a href="luciano-raab/?intro=lr">Luciano Raab</a></strong><span>Presidente</span><a class="team-profile-action" href="luciano-raab/?intro=lr">Conocé a Luciano →</a></figcaption>
@@ -101,6 +88,18 @@
           <img src="assets/equipo/franco.webp" width="511" height="565" loading="lazy" alt="Franco Monjes, gerente administrativo de Grupo RAAB" decoding="async">
           <figcaption><strong>Franco Monjes</strong><span>Gerente Administrativo</span></figcaption>
         </figure>
+        <figure class="team-person team-person--kevin" style="--step:6">
+          <img src="assets/equipo/kevin.webp" width="423" height="760" loading="lazy" alt="Kevin Valdés, supervisor de Grupo RAAB" decoding="async">
+          <figcaption><strong>Kevin Valdés</strong><span>Supervisor</span></figcaption>
+        </figure>
+        <figure class="team-person team-person--rocio" style="--step:2">
+          <img src="assets/equipo/rocio.webp" width="570" height="760" loading="lazy" alt="Rocío Salinas, administración de Grupo RAAB" decoding="async">
+          <figcaption><strong>Rocío Salinas</strong><span>Administración</span></figcaption>
+        </figure>
+        <figure class="team-person team-person--celeste" style="--step:4">
+          <img src="assets/equipo/celeste.webp" width="407" height="760" loading="lazy" alt="Celeste Aranda, administración de Grupo RAAB" decoding="async">
+          <figcaption><strong>Celeste Aranda</strong><span>Administración</span></figcaption>
+        </figure>
       </div>
     </section>
     <section class="portal-careers" id="sumate" aria-labelledby="careers-title">
@@ -108,7 +107,7 @@
         <h2 id="careers-title">Trabajá con nosotros</h2>
         <p>Contanos en qué área te gustaría trabajar y mandanos tu CV por correo.</p>
       </div>
-      <a href="mailto:contacto@rr-raab.com">Enviar CV por correo</a>
+      <a class="consultation-open consultation-fallback" href="mailto:contacto@rr-raab.com?subject=Postulaci%C3%B3n%20Grupo%20RAAB">Enviar mi CV</a>
       <form class="careers-form" id="careersForm" data-dialog-title="Enviar mi CV" action="mailto:contacto@rr-raab.com" method="post" enctype="text/plain" hidden>
         <label>Nombre y apellido <input name="nombre" autocomplete="name" maxlength="100" required></label>
         <label>Área de interés
