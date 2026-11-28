@@ -400,3 +400,105 @@
 .fleet-compare table { width: 100%; border-collapse: collapse; font-size: clamp(.8rem, 2.8vw, .95rem); }
 .fleet-compare :is(th,td) { text-align: left; padding: .55rem .35rem; border-bottom: 1px solid #dbe3ee; }
 .fleet-compare a { text-decoration: underline; }
+
+.fleet-turns {
+  border: 0;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+.fleet-turns legend {
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.fleet-turns label {
+  position: relative;
+  display: inline-block;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.fleet-turns input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.fleet-turns span {
+  display: grid;
+  place-items: center;
+  min-width: 64px;
+  min-height: 44px;
+  border: 1px solid #a9bdd5;
+  border-radius: 999px;
+  background: #fff;
+  color: #173b72;
+  font-weight: 700;
+}
+
+.fleet-turns input:checked + span {
+  background: #173b72;
+  border-color: #173b72;
+  color: #fff;
+}
+
+.fleet-turns input:focus-visible + span {
+  outline: 2px solid #173b72;
+  outline-offset: 3px;
+}
+
+.vehicle-card .vehicle-image img {
+  width: 92%;
+  height: 90%;
+  max-width: 100%;
+  object-fit: contain;
+  transform: none;
+}
+
+.vehicle-card:hover .vehicle-image img {
+  transform: none;
+}
+
+.has-turn-selection .vehicle-body .rates {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.fleet-turns[hidden],
+.rate[hidden] {
+  display: none;
+}
+
+.rate dl {
+  margin: 6px 0 0;
+}
+
+.rate dl div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 8px;
+  margin-top: 4px;
+}
+
+.rate dt {
+  font-size: .78rem;
+  color: #4c5b70;
+}
+
+.rate dd {
+  margin: 0;
+  color: #173b72;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+@media (max-width: 580px) {
+  .vehicle-track { gap: 12px; }
+  .vehicle-card { flex-basis: calc(100% - 30px); }
+}

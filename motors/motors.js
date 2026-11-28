@@ -2,7 +2,17 @@
   'use strict';
   // Carrusel real: navegación manual con flechas, gestos y teclado.
   const track = document.querySelector('#vehicleTrack');
-  if (track) {
+  const turns = document.querySelector('.fleet-turns');
+  const selectedTurn = () => turns?.querySelector('input:checked')?.value || '';
+  if (track && turns) {
+    const rates = track.querySelectorAll('[data-turn]');
+    function showRates() {
+      for (const rate of rates) rate.hidden = rate.dataset.turn !== selectedTurn();
+      track.classList.add('has-turn-selection');
+    }
+    turns.addEventListener('change', showRates);
+    showRates();
+    turns.hidden = false;
     const cards = Array.from(track.querySelectorAll('.vehicle-card'));
     const progress = document.querySelector('#fleetProgress');
     const counter = document.querySelector('#fleetIndex');
@@ -111,26 +121,15 @@
     if (detail) detail.required = !rental;
     const label = document.getElementById('motors-detail-label');
     if (label) label.textContent = rental ? 'Mensaje adicional (opcional)' : 'Contanos qué problema tiene el vehículo';
-    updateShifts();
   };
 
-  const updateShifts = () => {
-    if (!shift) return;
-    const card = Array.from(track?.querySelectorAll('[data-car]') ?? []).find(item => item.dataset.car === vehicle?.value);
-    const offered = Array.from(card?.querySelectorAll('.rate:has(strong) small') ?? [], item => item.textContent.trim().toLowerCase());
-    for (const option of shift.options) {
-      option.disabled = Boolean(card && option.value && !offered.includes(option.value.toLowerCase()));
-    }
-    if (shift.selectedOptions[0]?.disabled) shift.value = '';
-  };
-
-  vehicle?.addEventListener('change', updateShifts);
   reason?.addEventListener('change', updateFields);
   document.querySelectorAll('[data-service]').forEach(link => link.addEventListener('click', updateFields));
   updateFields();
   document.querySelectorAll('[data-ask]').forEach(button => button.addEventListener('click', () => {
     if (vehicle) vehicle.value = button.dataset.ask || '';
     if (reason) reason.value = 'Alquiler de vehículo';
+    if (shift) shift.value = selectedTurn();
     updateFields();
     if (form && !form.closest('dialog')) form.scrollIntoView({behavior: 'smooth', block: 'center'});
   }));

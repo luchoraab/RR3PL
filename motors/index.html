@@ -55,73 +55,74 @@
 
   <section class="section fleet-section" id="flota"><div class="container">
     <div class="fleet-title-row"><div class="section-header fleet-header"><div class="eyebrow dark">RR MOTORS / FLOTA</div><h2>Conocé nuestros autos.</h2><p>Nueve opciones con valores de alquiler por turno. Usá las flechas o deslizá para comparar los modelos.</p></div><div class="carousel-controls"><button class="slide-arrow" type="button" id="prev" aria-label="Vehículo anterior">←</button><button class="slide-arrow" type="button" id="next" aria-label="Vehículo siguiente">→</button></div></div>
+    <fieldset class="fleet-turns" hidden><legend>Duración del alquiler</legend><label><input type="radio" name="fleet-turn" value="12 horas" checked><span>12 h</span></label><label><input type="radio" name="fleet-turn" value="24 horas"><span>24 h</span></label></fieldset>
     <div class="vehicle-track" id="vehicleTrack" aria-label="Carrusel de nueve vehículos">
       <article class="vehicle-card" id="auto-1" data-car="Volkswagen Gol Power" tabindex="0" aria-label="Volkswagen Gol Power, alquiler de 12 y 24 horas">
     <div class="vehicle-image"><span class="body-label">Compacto</span><img src="assets/gol.webp" alt="Volkswagen Gol Power color blanco" loading="lazy" width="1000" height="750"></div>
     <div class="vehicle-body"><div class="vehicle-heading"><h3>Volkswagen Gol Power</h3><span>Blanco</span></div>
-      <div class="rates"><div class="rate"><small>12 HORAS</small><strong>$45.000</strong><span>Lunes a domingo</span></div><div class="rate"><small>24 HORAS</small><strong>$70.000 / $75.000</strong><span>Lun–Jue / Vie–Dom</span></div></div>
-      <button type="button" class="vehicle-cta" data-ask="Volkswagen Gol Power">Consultar este vehículo <span aria-hidden="true">↗</span></button>
+      <div class="rates"><div class="rate" data-turn="12 horas"><small>12 HORAS</small><strong>$45.000</strong><span>Lunes a domingo</span></div><div class="rate" data-turn="24 horas"><small>24 HORAS</small><dl><div><dt>Lunes a jueves</dt><dd>$70.000</dd></div><div><dt>Viernes a domingo</dt><dd>$75.000</dd></div></dl></div></div>
+      <button type="button" class="vehicle-cta" data-ask="Volkswagen Gol Power">Consultar por este auto <span aria-hidden="true">↗</span></button>
     </div>
   </article>
 <article class="vehicle-card" id="auto-2" data-car="Fiat Idea" tabindex="0" aria-label="Fiat Idea, alquiler de 12 y 24 horas">
     <div class="vehicle-image"><span class="body-label">Espacioso</span><img src="assets/idea.webp" alt="Fiat Idea color verde oscuro" loading="lazy" width="1000" height="750"></div>
     <div class="vehicle-body"><div class="vehicle-heading"><h3>Fiat Idea</h3><span>Verde oscuro</span></div>
-      <div class="rates"><div class="rate"><small>12 HORAS</small><strong>$50.000</strong><span>Lunes a domingo</span></div><div class="rate"><small>24 HORAS</small><strong>$75.000 / $80.000</strong><span>Lun–Jue / Vie–Dom</span></div></div>
-      <button type="button" class="vehicle-cta" data-ask="Fiat Idea">Consultar este vehículo <span aria-hidden="true">↗</span></button>
+      <div class="rates"><div class="rate" data-turn="12 horas"><small>12 HORAS</small><strong>$50.000</strong><span>Lunes a domingo</span></div><div class="rate" data-turn="24 horas"><small>24 HORAS</small><dl><div><dt>Lunes a jueves</dt><dd>$75.000</dd></div><div><dt>Viernes a domingo</dt><dd>$80.000</dd></div></dl></div></div>
+      <button type="button" class="vehicle-cta" data-ask="Fiat Idea">Consultar por este auto <span aria-hidden="true">↗</span></button>
     </div>
   </article>
 <article class="vehicle-card" id="auto-3" data-car="Fiat Palio Fire" tabindex="0" aria-label="Fiat Palio Fire, alquiler de 12 y 24 horas">
     <div class="vehicle-image"><span class="body-label">Versátil</span><img src="assets/palio.webp" alt="Fiat Palio Fire color verde oscuro" loading="lazy" width="1000" height="750"></div>
     <div class="vehicle-body"><div class="vehicle-heading"><h3>Fiat Palio Fire</h3><span>Verde oscuro</span></div>
-      <div class="rates"><div class="rate"><small>12 HORAS</small><strong>$50.000</strong><span>Lunes a domingo</span></div><div class="rate"><small>24 HORAS</small><strong>$75.000 / $80.000</strong><span>Lun–Jue / Vie–Dom</span></div></div>
-      <button type="button" class="vehicle-cta" data-ask="Fiat Palio Fire">Consultar este vehículo <span aria-hidden="true">↗</span></button>
+      <div class="rates"><div class="rate" data-turn="12 horas"><small>12 HORAS</small><strong>$50.000</strong><span>Lunes a domingo</span></div><div class="rate" data-turn="24 horas"><small>24 HORAS</small><dl><div><dt>Lunes a jueves</dt><dd>$75.000</dd></div><div><dt>Viernes a domingo</dt><dd>$80.000</dd></div></dl></div></div>
+      <button type="button" class="vehicle-cta" data-ask="Fiat Palio Fire">Consultar por este auto <span aria-hidden="true">↗</span></button>
     </div>
   </article>
 <article class="vehicle-card" id="auto-4" data-car="Chevrolet Prisma Joy" tabindex="0" aria-label="Chevrolet Prisma Joy, alquiler de 12 y 24 horas">
     <div class="vehicle-image"><span class="body-label">Sedán</span><img src="assets/prisma-joy.webp" alt="Chevrolet Prisma Joy color gris" loading="lazy" width="1000" height="750"></div>
     <div class="vehicle-body"><div class="vehicle-heading"><h3>Chevrolet Prisma Joy</h3><span>Gris</span></div>
-      <div class="rates"><div class="rate"><small>12 HORAS</small><strong>$60.000</strong><span>Lunes a domingo</span></div><div class="rate"><small>24 HORAS</small><span>Consultar disponibilidad y precio</span></div></div>
-      <button type="button" class="vehicle-cta" data-ask="Chevrolet Prisma Joy">Consultar este vehículo <span aria-hidden="true">↗</span></button>
+      <div class="rates"><div class="rate" data-turn="12 horas"><small>12 HORAS</small><strong>$60.000</strong><span>Lunes a domingo</span></div><div class="rate" data-turn="24 horas"><small>24 HORAS</small><span>Consultar precio</span></div></div>
+      <button type="button" class="vehicle-cta" data-ask="Chevrolet Prisma Joy">Consultar por este auto <span aria-hidden="true">↗</span></button>
     </div>
   </article>
 <article class="vehicle-card" id="auto-5" data-car="Chevrolet Prisma LTZ" tabindex="0" aria-label="Chevrolet Prisma LTZ, alquiler de 12 y 24 horas">
     <div class="vehicle-image"><span class="body-label">Sedán</span><img src="assets/prisma-ltz.webp" alt="Chevrolet Prisma LTZ color gris" loading="lazy" width="1000" height="750"></div>
     <div class="vehicle-body"><div class="vehicle-heading"><h3>Chevrolet Prisma LTZ</h3><span>Gris</span></div>
-      <div class="rates"><div class="rate"><small>12 HORAS</small><strong>$55.000 / $60.000</strong><span>Lun–Jue / Vie–Dom</span></div><div class="rate"><small>24 HORAS</small><span>Consultar disponibilidad y precio</span></div></div>
-      <button type="button" class="vehicle-cta" data-ask="Chevrolet Prisma LTZ">Consultar este vehículo <span aria-hidden="true">↗</span></button>
+      <div class="rates"><div class="rate" data-turn="12 horas"><small>12 HORAS</small><dl><div><dt>Lunes a jueves</dt><dd>$55.000</dd></div><div><dt>Viernes a domingo</dt><dd>$60.000</dd></div></dl></div><div class="rate" data-turn="24 horas"><small>24 HORAS</small><span>Consultar precio</span></div></div>
+      <button type="button" class="vehicle-cta" data-ask="Chevrolet Prisma LTZ">Consultar por este auto <span aria-hidden="true">↗</span></button>
     </div>
   </article>
 <article class="vehicle-card" id="auto-6" data-car="Fiat Cronos" tabindex="0" aria-label="Fiat Cronos, alquiler de 12 y 24 horas">
     <div class="vehicle-image"><span class="body-label">Sedán</span><img src="assets/cronos.webp" alt="Fiat Cronos color rojo" loading="lazy" width="1000" height="750"></div>
     <div class="vehicle-body"><div class="vehicle-heading"><h3>Fiat Cronos</h3><span>Rojo</span></div>
-      <div class="rates"><div class="rate"><small>12 HORAS</small><strong>$60.000</strong><span>Lunes a domingo</span></div><div class="rate"><small>24 HORAS</small><strong>$90.000 / $95.000</strong><span>Lun–Jue / Vie–Dom</span></div></div>
-      <button type="button" class="vehicle-cta" data-ask="Fiat Cronos">Consultar este vehículo <span aria-hidden="true">↗</span></button>
+      <div class="rates"><div class="rate" data-turn="12 horas"><small>12 HORAS</small><strong>$60.000</strong><span>Lunes a domingo</span></div><div class="rate" data-turn="24 horas"><small>24 HORAS</small><dl><div><dt>Lunes a jueves</dt><dd>$90.000</dd></div><div><dt>Viernes a domingo</dt><dd>$95.000</dd></div></dl></div></div>
+      <button type="button" class="vehicle-cta" data-ask="Fiat Cronos">Consultar por este auto <span aria-hidden="true">↗</span></button>
     </div>
   </article>
 <article class="vehicle-card" id="auto-7" data-car="Fiat Siena" tabindex="0" aria-label="Fiat Siena, alquiler de 12 y 24 horas">
     <div class="vehicle-image"><span class="body-label">Sedán</span><img src="assets/siena.webp" alt="Fiat Siena color gris oscuro" loading="lazy" width="1000" height="750"></div>
     <div class="vehicle-body"><div class="vehicle-heading"><h3>Fiat Siena</h3><span>Gris oscuro</span></div>
-      <div class="rates"><div class="rate"><small>12 HORAS</small><strong>$55.000</strong><span>Lunes a domingo</span></div><div class="rate"><small>24 HORAS</small><strong>$75.000 / $80.000</strong><span>Lun–Jue / Vie–Dom</span></div></div>
-      <button type="button" class="vehicle-cta" data-ask="Fiat Siena">Consultar este vehículo <span aria-hidden="true">↗</span></button>
+      <div class="rates"><div class="rate" data-turn="12 horas"><small>12 HORAS</small><strong>$55.000</strong><span>Lunes a domingo</span></div><div class="rate" data-turn="24 horas"><small>24 HORAS</small><dl><div><dt>Lunes a jueves</dt><dd>$75.000</dd></div><div><dt>Viernes a domingo</dt><dd>$80.000</dd></div></dl></div></div>
+      <button type="button" class="vehicle-cta" data-ask="Fiat Siena">Consultar por este auto <span aria-hidden="true">↗</span></button>
     </div>
   </article>
 <article class="vehicle-card" id="auto-8" data-car="Fiat Idea Adventure" tabindex="0" aria-label="Fiat Idea Adventure, alquiler de 12 y 24 horas">
     <div class="vehicle-image"><span class="body-label">Adventure</span><img src="assets/idea-adventure.webp" alt="Fiat Idea Adventure color gris claro" loading="lazy" width="1000" height="750"></div>
     <div class="vehicle-body"><div class="vehicle-heading"><h3>Fiat Idea Adventure</h3><span>Gris claro</span></div>
-      <div class="rates"><div class="rate"><small>12 HORAS</small><strong>$55.000</strong><span>Lunes a domingo</span></div><div class="rate"><small>24 HORAS</small><span>Consultar disponibilidad y precio</span></div></div>
-      <button type="button" class="vehicle-cta" data-ask="Fiat Idea Adventure">Consultar este vehículo <span aria-hidden="true">↗</span></button>
+      <div class="rates"><div class="rate" data-turn="12 horas"><small>12 HORAS</small><strong>$55.000</strong><span>Lunes a domingo</span></div><div class="rate" data-turn="24 horas"><small>24 HORAS</small><span>Consultar precio</span></div></div>
+      <button type="button" class="vehicle-cta" data-ask="Fiat Idea Adventure">Consultar por este auto <span aria-hidden="true">↗</span></button>
     </div>
   </article>
       <article class="vehicle-card" id="auto-9" data-car="Nissan Versa" tabindex="0" aria-label="Nissan Versa, alquiler de 12 y 24 horas">
         <div class="vehicle-image"><span class="body-label">Sedán</span><img src="assets/versa.webp" width="900" height="450" alt="Imagen de referencia de un Nissan Versa blanco" loading="lazy" decoding="async"></div>
         <div class="vehicle-body">
           <div class="vehicle-heading"><h3>Nissan Versa</h3><span>Blanco</span></div>
-          <div class="rates"><div class="rate"><small>12 HORAS</small><strong>$60.000</strong><span>Lunes a domingo</span></div><div class="rate"><small>24 HORAS</small><strong>$90.000</strong><span>Lunes a domingo</span></div></div>
-          <button type="button" class="vehicle-cta" data-ask="Nissan Versa">Consultar este vehículo <span aria-hidden="true">↗</span></button>
+          <div class="rates"><div class="rate" data-turn="12 horas"><small>12 HORAS</small><strong>$60.000</strong><span>Lunes a domingo</span></div><div class="rate" data-turn="24 horas"><small>24 HORAS</small><strong>$90.000</strong><span>Lunes a domingo</span></div></div>
+          <button type="button" class="vehicle-cta" data-ask="Nissan Versa">Consultar por este auto <span aria-hidden="true">↗</span></button>
         </div>
       </article>
     </div>
-    <div class="carousel-status"><span class="carousel-status-line" aria-hidden="true"><i id="fleetProgress"></i></span><span id="fleetIndex" role="status" aria-atomic="true">Vehículo 1 de 9</span><span>Vehículos en pantalla</span></div>
+    <div class="carousel-status"><span class="carousel-status-line" aria-hidden="true"><i id="fleetProgress"></i></span><span id="fleetIndex" role="status" aria-atomic="true">Vehículo 1 de 9</span></div>
     <details class="fleet-compare" id="comparar">
       <summary>Comparar turnos y precios</summary>
       <table><caption>Tarifas por vehículo</caption>
