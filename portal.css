@@ -427,7 +427,8 @@ html{scrollbar-gutter:stable}.team-person .profile-link{display:block}.profile-l
   .team-person--rocio { --portrait-position: center 13%; }
 }
 
-.portal-title { margin: .4rem 0 .25rem; font-size: clamp(1.4rem, 4vw, 2.1rem); }
+.portal-title { margin: 0; }
+.portal-title .group-logo { display: block; }
 
 .choice-card .logistics-lockup .logistics-emblem {
   display: block;
