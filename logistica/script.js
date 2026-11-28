@@ -30,46 +30,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const buildWhatsAppMessage = (title, fields) => {
     const lines = [title, ""];
     Object.entries(fields).forEach(([label, value]) => {
-      const finalValue = value && String(value).trim() ? String(value).trim() : "No informado";
-      lines.push(`- ${label}: ${finalValue}`);
+      const finalValue = String(value ?? "").trim();
+      if (finalValue) lines.push(`- ${label}: ${finalValue}`);
     });
-    return encodeURIComponent(lines.join("\n"));
+    return lines;
   };
 
   const quoteForm = document.getElementById("quoteForm");
   if (quoteForm) {
-    quoteForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const data = new FormData(quoteForm);
+    window.RRConsultation?.bind(quoteForm, data => {
       const msg = buildWhatsAppMessage("Hola RR 3PL, quiero solicitar una propuesta de servicios logísticos:", {
         "Empresa / Nombre": data.get("empresa"),
         "Origen": data.get("origen"),
         "Destino": data.get("destino"),
         "Detalle": data.get("detalle"),
       });
-      const link = document.createElement('a');
-      link.href = `https://wa.me/5493517059319?text=${msg}`;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      link.click();
+      window.RRConsultation.whatsapp(msg);
     });
   }
 
   const workForm = document.getElementById("workForm");
   if (workForm) {
-    workForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const data = new FormData(workForm);
+    window.RRConsultation?.bind(workForm, data => {
       const msg = buildWhatsAppMessage("Hola RR 3PL, quiero postularme para trabajar como cadete:", {
         "Nombre y apellido": data.get("nombre"),
         "Vehículo": data.get("vehiculo"),
         "Zona": data.get("zona"),
       });
-      const link = document.createElement('a');
-      link.href = `https://wa.me/5493517059319?text=${msg}`;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      link.click();
+      window.RRConsultation.whatsapp(msg);
     });
   }
 });

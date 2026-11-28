@@ -26,8 +26,9 @@
   <meta property="og:site_name" content="Grupo RAAB"><meta property="og:title" content="Grupo RAAB en Córdoba | Alquiler de autos, logística y software">
   <meta property="og:description" content="RR Motors · RR Third-Party Logistics · RR Digital Solutions">
   <meta property="og:url" content="https://rr-raab.com/"><meta property="og:image" content="https://rr-raab.com/assets/grupo-raab-logo.png">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Grupo RAAB","url":"https://rr-raab.com/","logo":"https://rr-raab.com/assets/grupo-raab-logo.png","subOrganization":[{"@type":"Organization","name":"RR Motors","url":"https://rr-raab.com/motors/"},{"@type":"Organization","name":"RR Third-Party Logistics","url":"https://rr-raab.com/logistica/"},{"@type":"Organization","name":"RR Digital Solutions","url":"https://rr-raab.com/digital/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Grupo RAAB","url":"https://rr-raab.com/","logo":"https://rr-raab.com/assets/grupo-raab-logo.png","subOrganization":[{"@type":"Organization","name":"RR Motors","url":"https://rr-raab.com/motors/"},{"@type":"Organization","name":"RR Third-Party Logistics","url":"https://rr-raab.com/logistica/"},{"@type":"Organization","name":"RR Digital Solutions","url":"https://rr-raab.com/digital/"}],"@id":"https://rr-raab.com/#organizacion"}</script>
   <link rel="stylesheet" href="consultation-dialog.css">
+  <script src="consultation-submit.js" defer></script>
   <script src="consultation-dialog.js" defer></script>
   <script src="careers.js" defer></script>
 </head>
@@ -43,9 +44,9 @@
   </div>
   <div class="ambient" aria-hidden="true"></div><div class="cursor-light" aria-hidden="true"></div>
   <main class="portal">
-    <div class="portal-heading"><h1 class="sr-only">Grupo RAAB</h1>
-      <img src="assets/grupo-raab-logo.png" alt="GRUPO RAAB" class="group-logo">
-      <p>Nuestras unidades de negocio</p>
+    <div class="portal-heading"><h1 class="portal-title">Grupo RAAB</h1>
+      <img src="assets/grupo-raab-logo.png" alt="" class="group-logo">
+      <p>Movilidad, logística y tecnología en Córdoba</p>
     </div>
     <nav class="choices" aria-label="Unidades de negocio de Grupo RAAB">
       <a class="choice-card motors" href="motors/" aria-label="Entrar al sitio de RR Motors">
@@ -107,7 +108,8 @@
         <h2 id="careers-title">Trabajá con nosotros</h2>
         <p>Contanos en qué área te gustaría trabajar y mandanos tu CV por correo.</p>
       </div>
-      <form class="careers-form" id="careersForm" data-dialog-title="Enviar mi CV" action="mailto:contacto@rr-raab.com" method="post" enctype="text/plain">
+      <a href="mailto:contacto@rr-raab.com">Enviar CV por correo</a>
+      <form class="careers-form" id="careersForm" data-dialog-title="Enviar mi CV" action="mailto:contacto@rr-raab.com" method="post" enctype="text/plain" hidden>
         <label>Nombre y apellido <input name="nombre" autocomplete="name" maxlength="100" required></label>
         <label>Área de interés
           <select name="area" required>

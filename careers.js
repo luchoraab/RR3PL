@@ -1,7 +1,5 @@
 const careersForm = document.querySelector('#careersForm');
-careersForm.addEventListener('submit', event => {
-  event.preventDefault();
-  const data = new FormData(careersForm);
+window.RRConsultation?.bind(careersForm, data => {
   const subject = encodeURIComponent('Postulación Grupo RAAB — ' + data.get('area'));
   const body = encodeURIComponent([
     'Hola, Grupo RAAB:',

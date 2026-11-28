@@ -19,8 +19,9 @@
   <meta property="og:description" content="RR Digital Solutions desarrolla páginas web, aplicaciones de gestión y tableros de datos para empresas y comercios de Córdoba y Argentina.">
   <meta property="og:url" content="https://rr-raab.com/digital/">
   <meta property="og:image" content="https://rr-raab.com/assets/grupo-raab-logo.png">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"RR Digital Solutions - Grupo RAAB","url":"https://rr-raab.com/digital/","telephone":"+5493517059319","areaServed":"Argentina","description":"Diseño web profesional, desarrollo de aplicaciones, paneles y sistemas a medida.","parentOrganization":{"@type":"Organization","name":"Grupo RAAB","url":"https://rr-raab.com/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"RR Digital Solutions - Grupo RAAB","url":"https://rr-raab.com/digital/","telephone":"+5493517059319","areaServed":"Argentina","description":"Diseño web profesional, desarrollo de aplicaciones, paneles y sistemas a medida.","parentOrganization":{"@id":"https://rr-raab.com/#organizacion"},"@id":"https://rr-raab.com/digital/#empresa"}</script>
   <link rel="stylesheet" href="../consultation-dialog.css">
+  <script src="../consultation-submit.js" defer></script>
   <script src="../consultation-dialog.js" defer></script>
   <script src="../floating-menu.js" defer></script>
 </head>
@@ -86,6 +87,12 @@
       </div>
     </section>
 
+    <section class="container project-demo" aria-labelledby="demo-title">
+      <h2 id="demo-title">Probá un ejemplo de seguimiento de pedidos</h2>
+      <p>Datos de demostración.</p>
+      <details><summary>Pedido #1042 · En reparto</summary><p>El equipo preparó el pedido y lo asignó al repartidor. El próximo paso es registrar la entrega.</p></details>
+      <details><summary>Pedido #1041 · Entregado</summary><p>La entrega quedó registrada y el comprobante está disponible para el equipo.</p></details>
+    </section>
     <section class="d-section why-us">
       <div class="container why-columns"><div data-reveal><span class="eyebrow-d">PENSADO PARA VOS</span><h2>Menos vueltas.<br><span>Más posibilidades.</span></h2><p>Una buena solución digital no se mide solo por cómo se ve. Tiene que ser fácil de usar, responder a una necesidad real y acompañarte cuando tu negocio crece.</p><a class="text-link" href="#contacto">Llevemos tu idea a la práctica <span>↗</span></a></div>
         <div class="reason-list" data-reveal><div><span class="reason-icon">↗</span><div><h3>Diseño pensado para convertir</h3><p>Ordenamos el contenido para que tus visitantes encuentren lo importante y den el siguiente paso.</p></div></div><div><span class="reason-icon">◎</span><div><h3>Experiencias que se adaptan</h3><p>Webs y aplicaciones preparadas para una experiencia cómoda en computadora, tablet y celular.</p></div></div><div><span class="reason-icon">✳</span><div><h3>Tecnología con propósito</h3><p>Elegimos soluciones según lo que tu empresa necesita, sin agregar complejidad innecesaria.</p></div></div></div>
@@ -100,7 +107,7 @@
     </div></div></section>
 
 <section class="d-contact" id="contacto"><div class="container contact-layout"><div class="contact-intro" data-reveal><span class="eyebrow-d">04 / HABLEMOS</span><h2>Tu próxima idea<br><span>empieza acá.</span></h2><p>Contanos qué querés construir. No hace falta que tengas todo definido: empezamos con una conversación y vemos qué formato puede resolver tu necesidad.</p><div class="contact-details"><a href="https://wa.me/5493517059319?text=Hola%2C%20RR%20Digital%20Solutions.%20Quiero%20consultar%20por%20un%20proyecto.%20Mi%20negocio%20es%20__%20y%20necesito%20__." target="_blank" rel="noopener noreferrer">WhatsApp <span>+54 9 351 705 9319 ↗</span></a><a href="mailto:contacto@rr-raab.com">Email <span>contacto@rr-raab.com ↗</span></a></div></div>
-      <form class="digital-form" id="digitalForm" data-dialog-title="Contanos tu proyecto" data-reveal><label>Nombre<input name="nombre" autocomplete="name" required></label><label>¿Qué querés desarrollar?<select name="proyecto" id="tipoProyecto" required><option value="">Elegí una opción</option><option>Página web</option><option>Aplicación</option><option>Software y sistemas</option><option>Tienda online</option><option>Necesito orientación</option></select></label><label>Contanos tu idea<textarea name="idea" rows="4" placeholder="¿Qué querés resolver o mejorar?" required></textarea></label><button type="submit" class="button button-blue form-submit">Continuar en WhatsApp <span>↗</span></button></form>
+      <form class="digital-form" id="digitalForm" data-dialog-title="Contanos tu proyecto" data-reveal hidden method="post"><label>Nombre<input name="nombre" autocomplete="name" required></label><label>¿Qué querés desarrollar?<select name="proyecto" id="tipoProyecto" required><option value="">Elegí una opción</option><option>Página web</option><option>Aplicación</option><option>Software y sistemas</option><option>Tienda online</option><option>Necesito orientación</option></select></label><label>Contanos tu idea<textarea name="idea" rows="4" placeholder="¿Qué querés resolver o mejorar?" required></textarea></label><button type="submit" class="button button-blue form-submit">Continuar en WhatsApp <span>↗</span></button></form>
     </div></section>
   </main>
   <footer class="digital-footer"><div class="container"><div class="footer-top"><div><a href="../" class="footer-mark"><img src="../assets/grupo-raab-logo.png" alt="Grupo RAAB"></a><p>Desarrollo digital a medida.<br>Córdoba, Argentina.</p></div><div class="footer-nav"><a href="../">Grupo RAAB</a><a href="../motors/">RR Motors</a><a href="../logistica/">RR 3PL</a><a href="#inicio">Volver arriba ↑</a></div></div><div class="footer-bottom"><span>© 2026 Grupo RAAB · RR RAAB S.A.S. · CUIT 33-71952606-9 · RR Digital Solutions</span><span>Diseñado para hacer que las ideas avancen.</span></div></div></footer>

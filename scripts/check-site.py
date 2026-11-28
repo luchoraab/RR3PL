@@ -12,10 +12,18 @@ class Page(HTMLParser):
         super().__init__()
         self.ids = set()
         self.links = []
+        self.issues = []
+        self.headings = 0
         self.feed(path.read_text(encoding="utf-8"))
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == "h1":
+            self.headings += 1
+        if tag == "img" and "alt" not in attrs:
+            self.issues.append(f"Imagen sin alt: {attrs.get('src', '')}")
+        if attrs.get("id") in self.ids:
+            self.issues.append(f"ID duplicado: {attrs['id']}")
         if attrs.get("id"):
             self.ids.add(attrs["id"])
         for key in ("href", "src", "poster"):
@@ -26,6 +34,9 @@ class Page(HTMLParser):
 pages = {path: Page(path) for path in PAGES}
 errors = []
 for path, page in pages.items():
+    errors.extend(f"{path.relative_to(ROOT)}: {issue}" for issue in page.issues)
+    if page.headings != 1:
+        errors.append(f"{path.relative_to(ROOT)}: {page.headings} encabezados H1")
     for link in page.links:
         url = urlsplit(link)
         if url.scheme or url.netloc:

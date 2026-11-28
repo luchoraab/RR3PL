@@ -77,3 +77,11 @@
 
 .consultation-dialog { scroll-padding-block: 4.5rem 1rem; }
 .consultation-dialog :is(input, select, textarea, button) { scroll-margin-block: .75rem; }
+
+form[data-dialog-title][hidden] { display: none !important; }
+:root { --header-clearance: 6rem; --control-focus: #4b79c1; }
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid var(--control-focus);
+  outline-offset: 3px;
+}
+main :where(section[id], article[id]) { scroll-margin-block-start: var(--header-clearance); }

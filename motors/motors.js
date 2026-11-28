@@ -43,8 +43,16 @@
       if (event.key === 'ArrowRight') { event.preventDefault(); step(1); }
       if (event.key === 'ArrowLeft') { event.preventDefault(); step(-1); }
     });
-    track.addEventListener('scroll', sync, {passive:true});
-    window.addEventListener('resize', sync);
+    let pendingFrame = 0;
+    function scheduleFleetUpdate() {
+      if (pendingFrame) return;
+      pendingFrame = requestAnimationFrame(() => {
+        pendingFrame = 0;
+        sync();
+      });
+    }
+    track.addEventListener('scroll', scheduleFleetUpdate, { passive: true });
+    window.addEventListener('resize', scheduleFleetUpdate);
     sync();
   }
 
@@ -126,10 +134,7 @@
     updateFields();
     if (form && !form.closest('dialog')) form.scrollIntoView({behavior: 'smooth', block: 'center'});
   }));
-  form?.addEventListener('submit', event => {
-    event.preventDefault();
-    if (!form.reportValidity()) return;
-    const data = new FormData(form);
+  window.RRConsultation?.bind(form, data => {
     const lines = [
       'Hola, quiero consultar a RR Motors.',
       '',
@@ -140,11 +145,6 @@
       const value = String(data.get(field) || '').trim();
       if (value) lines.push(`${label}: ${value}`);
     }
-    const url = 'https://wa.me/5493517059319?text=' + encodeURIComponent(lines.join('\n'));
-    const link = document.createElement('a');
-      link.href = url;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      link.click();
+    window.RRConsultation.whatsapp(lines);
   });
 })();

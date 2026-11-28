@@ -43,3 +43,7 @@ body{background:radial-gradient(ellipse 55% 30% at 76% 8%,rgba(60,90,188,.16),tr
   .hero-device .hero-mobile, .hero-device .ambient-ring { display: none; }
   .hero-device .hero-browser { position: relative; inset: auto; width: 100%; transform: none; }
 }
+
+.project-demo { padding-block: clamp(2rem, 5vw, 4rem); }
+.project-demo details { padding: .85rem 1rem; margin-top: .75rem; border: 1px solid #60708f; border-radius: .7rem; }
+.project-demo summary { cursor: pointer; }

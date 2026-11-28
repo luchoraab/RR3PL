@@ -28,8 +28,9 @@
   <meta property="og:image" content="https://rr-raab.com/logistica/assets/rr-3pl-logo.png" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://rr-raab.com/logistica/#empresa","name":"RR 3PL · Third-Party Logistics","alternateName":"RR Third-Party Logistics","url":"https://rr-raab.com/logistica/","logo":"https://rr-raab.com/logistica/assets/rr-3pl-logo.png","image":"https://rr-raab.com/logistica/assets/grupo-raab.jpg","description":"Cadetería privada y servicios de logística tercerizada para empresas, comercios y profesionales en Córdoba, Argentina.","telephone":"+54-9-351-705-9319","email":"contacto@rr-raab.com","address":{"@type":"PostalAddress","streetAddress":"Prudencio Bustos 152","addressLocality":"Córdoba","addressRegion":"Córdoba","addressCountry":"AR"},"areaServed":{"@type":"AdministrativeArea","name":"Córdoba, Argentina"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios RR 3PL","itemListElement":[{"@type":"OfferCatalog","name":"Cadetería privada"},{"@type":"OfferCatalog","name":"Seguimiento operativo de envíos"},{"@type":"OfferCatalog","name":"Cobranzas y rendición"},{"@type":"OfferCatalog","name":"Trámites y comisionista"},{"@type":"OfferCatalog","name":"Logística inversa"},{"@type":"OfferCatalog","name":"Entregas on-demand"}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://rr-raab.com/logistica/#empresa","name":"RR 3PL · Third-Party Logistics","alternateName":"RR Third-Party Logistics","url":"https://rr-raab.com/logistica/","logo":"https://rr-raab.com/logistica/assets/rr-3pl-logo.png","image":"https://rr-raab.com/logistica/assets/grupo-raab.jpg","description":"Cadetería privada y servicios de logística tercerizada para empresas, comercios y profesionales en Córdoba, Argentina.","telephone":"+54-9-351-705-9319","email":"contacto@rr-raab.com","address":{"@type":"PostalAddress","streetAddress":"Prudencio Bustos 152","addressLocality":"Córdoba","addressRegion":"Córdoba","addressCountry":"AR"},"areaServed":{"@type":"AdministrativeArea","name":"Córdoba, Argentina"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios RR 3PL","itemListElement":[{"@type":"OfferCatalog","name":"Cadetería privada"},{"@type":"OfferCatalog","name":"Seguimiento operativo de envíos"},{"@type":"OfferCatalog","name":"Cobranzas y rendición"},{"@type":"OfferCatalog","name":"Trámites y comisionista"},{"@type":"OfferCatalog","name":"Logística inversa"},{"@type":"OfferCatalog","name":"Entregas on-demand"}]},"parentOrganization":{"@id":"https://rr-raab.com/#organizacion"}}</script>
   <link rel="stylesheet" href="../consultation-dialog.css">
+  <script src="../consultation-submit.js" defer></script>
   <script src="../consultation-dialog.js" defer></script>
   <script src="../floating-menu.js" defer></script>
 </head>
@@ -282,7 +283,7 @@
           </div>
         </div>
 
-        <form class="form-card" id="quoteForm" data-dialog-title="Cotizar un envío">
+        <form class="form-card" id="quoteForm" data-dialog-title="Cotizar un envío" hidden method="post">
           <label>
             Nombre / Empresa
             <input type="text" name="empresa" placeholder="Ej: Dermocosmética Córdoba" required />
@@ -324,7 +325,8 @@
           </div>
         </div>
 
-        <form class="form-card" id="workForm" data-dialog-title="Postularme como cadete">
+        <a href="https://wa.me/5493517059319?text=Hola%2C%20quiero%20postularme%20como%20cadete.">Postularme por WhatsApp</a>
+        <form class="form-card" id="workForm" data-dialog-title="Postularme como cadete" hidden method="post">
           <label>
             Nombre y apellido
             <input type="text" name="nombre" placeholder="Tu nombre completo" required />

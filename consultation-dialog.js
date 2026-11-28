@@ -1,11 +1,13 @@
 (() => {
-  if (typeof HTMLDialogElement === 'undefined' || !HTMLDialogElement.prototype.showModal) return;
+  const supportsDialog = typeof HTMLDialogElement !== 'undefined' && HTMLDialogElement.prototype.showModal;
 
   const dialogs = new Map();
   const triggers = new WeakMap();
-  for (const form of document.querySelectorAll('form[data-dialog-title]')) {
+  function mount(form) {
+    form.hidden = false;
+    if (!supportsDialog) return;
     const section = form.closest('section[id]');
-    if (!section) continue;
+    if (!section) return;
 
     const dialog = document.createElement('dialog');
     dialog.className = 'consultation-dialog';
@@ -48,7 +50,11 @@
       link.setAttribute('aria-haspopup', 'dialog');
       link.setAttribute('aria-controls', dialog.id);
     }
+    if (location.hash === '#' + section.id) open(dialog, opener);
   }
+
+  document.addEventListener('rr:consultation-ready', event => mount(event.target));
+  document.querySelectorAll('form[data-dialog-title]:not([hidden])').forEach(mount);
 
   function open(dialog, trigger) {
     if (dialog.open) return;
@@ -66,6 +72,4 @@
     open(dialog, trigger);
   });
 
-  const linkedDialog = dialogs.get(location.hash);
-  if (linkedDialog) linkedDialog.showModal();
 })();

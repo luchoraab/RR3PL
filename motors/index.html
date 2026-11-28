@@ -15,8 +15,9 @@
 <meta property="og:site_name" content="RR Motors - Grupo RAAB"><meta property="og:title" content="RR Motors | Alquiler de vehículos en Córdoba">
 <meta property="og:description" content="Alquilá autos por 12 o 24 horas en Córdoba con RR Motors. Compará la flota y los precios, consultá disponibilidad o pedí diagnóstico y servicios de taller.">
 <meta property="og:url" content="https://rr-raab.com/motors/"><meta property="og:image" content="https://rr-raab.com/assets/grupo-raab-logo.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoRental","name":"RR Motors - Grupo RAAB","url":"https://rr-raab.com/motors/","telephone":"+54 9 351 705 9319","areaServed":{"@type":"City","name":"Córdoba"},"description":"Alquiler de vehículos por 12 o 24 horas y servicios automotores de diagnóstico, mecánica y auxilio de batería.","parentOrganization":{"@type":"Organization","name":"Grupo RAAB","url":"https://rr-raab.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoRental","name":"RR Motors - Grupo RAAB","url":"https://rr-raab.com/motors/","telephone":"+54 9 351 705 9319","areaServed":{"@type":"City","name":"Córdoba"},"description":"Alquiler de vehículos por 12 o 24 horas y servicios automotores de diagnóstico, mecánica y auxilio de batería.","parentOrganization":{"@id":"https://rr-raab.com/#organizacion"},"@id":"https://rr-raab.com/motors/#empresa"}</script>
   <link rel="stylesheet" href="../consultation-dialog.css">
+  <script src="../consultation-submit.js" defer></script>
   <script src="../consultation-dialog.js" defer></script>
   <script src="../floating-menu.js" defer></script>
 </head>
@@ -121,6 +122,23 @@
       </article>
     </div>
     <div class="carousel-status"><span class="carousel-status-line" aria-hidden="true"><i id="fleetProgress"></i></span><span id="fleetIndex" role="status" aria-atomic="true">Vehículo 1 de 9</span><span>Vehículos en pantalla</span></div>
+    <details class="fleet-compare" id="comparar">
+      <summary>Comparar turnos y precios</summary>
+      <table><caption>Tarifas por vehículo</caption>
+        <thead><tr><th scope="col">Modelo</th><th scope="col">12 h</th><th scope="col">24 h</th></tr></thead>
+        <tbody>
+<tr><th scope="row"><a href="#auto-1">Volkswagen Gol</a></th><td>$45.000  Lunes a domingo</td><td>Sin oferta para este modelo</td></tr>
+<tr><th scope="row"><a href="#auto-2">Fiat Idea</a></th><td>$50.000  Lunes a domingo</td><td>$73.000  Lunes a domingo</td></tr>
+<tr><th scope="row"><a href="#auto-3">Fiat Palio Fire</a></th><td>$50.000  Lunes a domingo</td><td>$73.000  Lunes a domingo</td></tr>
+<tr><th scope="row"><a href="#auto-4">Chevrolet Prisma Joy</a></th><td>$55.000 / $60.000  Lun–Jue / Vie–Dom</td><td>$85.000  Lunes a domingo</td></tr>
+<tr><th scope="row"><a href="#auto-5">Chevrolet Prisma LTZ</a></th><td>$55.000 / $60.000  Lun–Jue / Vie–Dom</td><td>$85.000  Lunes a domingo</td></tr>
+<tr><th scope="row"><a href="#auto-6">Fiat Cronos</a></th><td>$55.000 / $60.000  Lun–Jue / Vie–Dom</td><td>$90.000 / $95.000  Lun–Jue / Vie–Dom</td></tr>
+<tr><th scope="row"><a href="#auto-7">Fiat Siena</a></th><td>$55.000  Lunes a domingo</td><td>$76.000  Lunes a domingo</td></tr>
+<tr><th scope="row"><a href="#auto-8">Fiat Idea Adventure</a></th><td>$55.000  Lunes a domingo</td><td>$76.000  Lunes a domingo</td></tr>
+<tr><th scope="row"><a href="#auto-9">Nissan Versa</a></th><td>Sin oferta para este modelo</td><td>$90.000</td></tr>
+        </tbody>
+      </table>
+    </details>
     <div class="fleet-notes"><span><span class="small-blue-dot"></span> Tarifas indicadas en pesos argentinos por turno.</span><span>Consultá condiciones y disponibilidad antes de coordinar.</span></div>
   </div></section>
 
@@ -162,7 +180,7 @@
 
 <section class="final-cta" id="contacto"><div class="container contact-shell">
     <div class="contact-copy"><div class="eyebrow">HABLEMOS</div><h2>Pedinos una propuesta y te respondemos rápido.</h2><p>Escribinos qué vehículo o servicio necesitás y coordinamos por WhatsApp con una atención directa, simple y comercial.</p><a href="https://wa.me/5493517059319?text=Hola%2C%20RR%20Motors.%20Quiero%20consultar%20disponibilidad%20de%20alquiler.%20Fecha%3A%20__.%20Turno%20%2812%20o%2024%20horas%29%3A%20__.%20Veh%C3%ADculo%3A%20__." class="contact-direct" target="_blank" rel="noopener noreferrer">Consultar disponibilidad por WhatsApp <span>↗</span></a></div>
-    <form id="contactForm" data-dialog-title="Consultar alquiler o taller" class="contact-form"><div class="form-grid"><label>Nombre<input type="text" name="nombre" placeholder="Tu nombre" autocomplete="name" required></label><label>Quiero consultar<select name="motivo" id="motivo"><option>Alquiler de vehículo</option><option>Escaneo profesional vehicular</option><option>Trabajos mecánicos</option><option>Auxilio de batería</option></select></label><label data-rental>Vehículo<select name="vehiculo" id="vehiculo"><option value="">Seleccionar vehículo</option><option>Volkswagen Gol</option><option>Fiat Idea</option><option>Fiat Palio Fire</option><option>Chevrolet Prisma Joy</option><option>Chevrolet Prisma LTZ</option><option>Fiat Cronos</option><option>Fiat Siena</option><option>Fiat Idea Adventure</option><option>Nissan Versa</option></select></label><label data-rental>Fecha<input type="date" name="fecha"></label><label data-rental>Turno<select name="turno"><option value="">Consultar modalidad</option><option>12 horas</option><option>24 horas</option></select></label><label><span id="motors-detail-label">Mensaje adicional</span><textarea name="mensaje" rows="3"></textarea></label></div><button type="submit" class="btn btn-primary form-submit">Continuar en WhatsApp <span aria-hidden="true">↗</span></button></form>
+    <form id="contactForm" data-dialog-title="Consultar alquiler o taller" class="contact-form" hidden method="post"><div class="form-grid"><label>Nombre<input type="text" name="nombre" placeholder="Tu nombre" autocomplete="name" required></label><label>Quiero consultar<select name="motivo" id="motivo"><option>Alquiler de vehículo</option><option>Escaneo profesional vehicular</option><option>Trabajos mecánicos</option><option>Auxilio de batería</option></select></label><label data-rental>Vehículo<select name="vehiculo" id="vehiculo"><option value="">Seleccionar vehículo</option><option>Volkswagen Gol</option><option>Fiat Idea</option><option>Fiat Palio Fire</option><option>Chevrolet Prisma Joy</option><option>Chevrolet Prisma LTZ</option><option>Fiat Cronos</option><option>Fiat Siena</option><option>Fiat Idea Adventure</option><option>Nissan Versa</option></select></label><label data-rental>Fecha<input type="date" name="fecha"></label><label data-rental>Turno<select name="turno"><option value="">Consultar modalidad</option><option>12 horas</option><option>24 horas</option></select></label><label><span id="motors-detail-label">Mensaje adicional</span><textarea name="mensaje" rows="3"></textarea></label></div><button type="submit" class="btn btn-primary form-submit">Continuar en WhatsApp <span aria-hidden="true">↗</span></button></form>
   </div></section>
 </main>
 <footer class="footer"><div class="container footer-main"><div class="footer-logo"><img src="../assets/grupo-raab-logo.png" alt="Grupo RAAB" width="200" height="70"><p>RR Motors · Unidad de movilidad de Grupo RAAB.<br>Córdoba, Argentina.</p></div><div><strong>Contacto</strong><a href="https://wa.me/5493517059319?text=Hola%2C%20RR%20Motors.%20Quiero%20consultar%20disponibilidad%20de%20alquiler.%20Fecha%3A%20__.%20Turno%20%2812%20o%2024%20horas%29%3A%20__.%20Veh%C3%ADculo%3A%20__." target="_blank" rel="noopener noreferrer">+54 351 705 9319</a><a href="mailto:contacto@rr-raab.com">contacto@rr-raab.com</a></div><div><strong>Grupo RAAB</strong><a href="../">Portal principal</a><a href="../logistica/">RR 3PL</a><a href="../digital/">RR Digital Solutions</a></div></div><div class="container footer-bottom">© 2026 Grupo RAAB · RR RAAB S.A.S. · CUIT 33-71952606-9 · RR Motors</div></footer>
