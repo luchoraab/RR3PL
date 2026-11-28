@@ -17,7 +17,7 @@
     try {
       if (!location.hash && !matchMedia('(prefers-reduced-motion: reduce)').matches && !sessionStorage.getItem('rr_intro_seen')) {
         document.documentElement.classList.add('rr-preintro');
-        window.rrIntroFallback = setTimeout(() => document.documentElement.classList.remove('rr-preintro'), 1500);
+        window.rrIntroFallback = setTimeout(() => document.documentElement.classList.remove('rr-preintro'), 2300);
       }
     } catch {}
   </script>
